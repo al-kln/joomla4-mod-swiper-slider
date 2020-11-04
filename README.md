@@ -11,6 +11,6 @@ Swiper is also a default slider component in the <a href="http://ionicframework.
 ***
 
 ## What is Joomla?
-+<a href="https://www.joomla.org/about-joomla.html" rel="nofollow">Joomla!</a> is a <strong>Content Management System</strong> (CMS) which enables you to build websites and powerful online applications.
++ <a href="https://www.joomla.org/about-joomla.html" rel="nofollow">Joomla!</a> is a <strong>Content Management System</strong> (CMS) which enables you to build websites and powerful online applications.
 + It is a simple and powerful web server application which requires a server with PHP and either MySQL, PostgreSQL or SQL Server to run. You can find <a href="https://downloads.joomla.org/technical-requirements" rel="nofollow">full technical requirements here</a>.
 + Joomla! is <strong>free and Open Source software</strong> distributed under the GNU General Public License version 2 or later.
