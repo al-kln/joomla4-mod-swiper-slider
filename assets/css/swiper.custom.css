@@ -1,0 +1,73 @@
+.swiper-container-cube {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -150px;
+}
+.swiper-container-cube .swiper-slide,
+.swiper-fullscreen .swiper-slide {
+    -webkit-background-position: center;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.swiper-container-coverflow .swiper-slide,
+.swiper-container-flip .swiper-slide {
+    -webkit-background-position: center;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+.swiper-fullscreen {
+    height: 100vh;
+}
+.swiper-button-next.swiper-custom-controls::after,
+.swiper-button-prev.swiper-custom-controls::after {
+    display: none;
+}
+.swiper-custom-controls .bi-swiper {
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    background-color: var(--swiper-theme-color);
+    background-size: 1.5rem 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.swiper-custom-controls .bi-swiper.bi-swiper-prev {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+}
+.swiper-custom-controls .bi-swiper.bi-swiper-next {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+.swiper-lazy-load .swiper-wrapper {
+    -ms-flex-align: center;
+    align-items: center;
+}
+.swiper-lazy-load .swiper-slide {
+    position: unset;
+}
+.swiper-lazy-preloader {
+    position: relative;
+    margin-top: 0;
+    top: 0;
+}
+.parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    -webkit-background-position: center center;
+    background-position: center center;
+}
+.swiper-parallax .swiper-slide {
+    padding: 3rem 5rem;
+}
