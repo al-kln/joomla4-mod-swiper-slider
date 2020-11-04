@@ -8,6 +8,8 @@ Swiper is not compatible with all platforms, it is a modern touch slider which i
 Swiper, along with other great components, is a part of <a href="https://framework7.io/" target="_blank">Framework7</a> - a fully-featured framework for building iOS & Android apps.
 Swiper is also a default slider component in the <a href="http://ionicframework.com/" target="_blank">Ionic Framework</a>.
 
+*This module is built for Joomla 4*
+
 ***
 
 ## What is Joomla?
