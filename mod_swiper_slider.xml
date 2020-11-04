@@ -26,6 +26,10 @@
 		<language tag="en-GB">en-GB/en-GB.mod_swiper_slider.sys.ini</language>
 	</languages>
 
+	<updateservers>
+		<server name="mod_swiper_slider" type="full" format="zip">https://raw.githubusercontent.com/al-kln/updateservers/main/j4_mod_swiper_slider.xml</server>
+	</updateservers>
+
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
