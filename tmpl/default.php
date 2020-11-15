@@ -342,6 +342,8 @@ if($pagination_type == 'custom' || $effect == 'cube' || $effect == 'coverflow' |
 						$hash_history = ' data-hash="' . $alias . '"';
 					} elseif($history) {
 						$hash_history = ' data-history="' . $alias . '"';
+					} else {
+						$hash_history = '';
 					}
 
 
