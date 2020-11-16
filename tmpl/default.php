@@ -16,36 +16,37 @@ if($params->get('moduleclass_sfx') != null) {
 	$mod__sfx .= ' ' . htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
 }
 
+if (!function_exists('sanitizeFileName')) {
+	function sanitizeFileName($fileName) {
+		// Remove multiple spaces
+		$fileName = preg_replace('/\s+/', ' ', $fileName);
 
-function sanitizeFileName($fileName) {
-	// Remove multiple spaces
-	$fileName = preg_replace('/\s+/', ' ', $fileName);
+		// Replace spaces with hyphens
+		$fileName = preg_replace('/\s/', '-', $fileName);
 
-	// Replace spaces with hyphens
-	$fileName = preg_replace('/\s/', '-', $fileName);
+		// Replace german characters
+		$germanReplaceMap = [
+			'ä' => 'ae',
+			'Ä' => 'Ae',
+			'ü' => 'ue',
+			'Ü' => 'Ue',
+			'ö' => 'oe',
+			'Ö' => 'Oe',
+			'ß' => 'ss',
+		];
+		$fileName = str_replace(array_keys($germanReplaceMap), $germanReplaceMap, $fileName);
 
-	// Replace german characters
-	$germanReplaceMap = [
-		'ä' => 'ae',
-		'Ä' => 'Ae',
-		'ü' => 'ue',
-		'Ü' => 'Ue',
-		'ö' => 'oe',
-		'Ö' => 'Oe',
-		'ß' => 'ss',
-	];
-	$fileName = str_replace(array_keys($germanReplaceMap), $germanReplaceMap, $fileName);
+		// Remove everything but "normal" characters
+		$fileName = preg_replace("([^\w\s\d\-])", '', $fileName);
 
-	// Remove everything but "normal" characters
-	$fileName = preg_replace("([^\w\s\d\-])", '', $fileName);
+		// Remove multiple hyphens because of contract and project name connection
+		$fileName = preg_replace('/-+/', '-', $fileName);
 
-	// Remove multiple hyphens because of contract and project name connection
-	$fileName = preg_replace('/-+/', '-', $fileName);
+		// lower the string
+		$fileName = strtolower($fileName);
 
-	// lower the string
-	$fileName = strtolower($fileName);
-
-	return $fileName;
+		return $fileName;
+	}
 }
 
 
