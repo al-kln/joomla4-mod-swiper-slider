@@ -371,7 +371,7 @@ if($pagination_type == 'custom' || $effect == 'cube' || $effect == 'coverflow' |
 									<?php } ?>
 									<?php if ($image_nolink == '0') {
 										if ($image_customlink != null) { ?>
-											<a class="mehrinfo customlink<?php if($captionclass != null) { echo ' ' . $linkbtnclass; } ?>" href="<?php echo JURI::root(). $image_customlink; ?>"><?php echo $link_btn_txt; ?></a>
+											<a class="mehrinfo customlink<?php if($captionclass != null) { echo ' ' . $linkbtnclass; } ?>" href="<?php echo $image_customlink; ?>" target="_blank"><?php echo $link_btn_txt; ?></a>
 										<?php } else { ?>
 											<a class="mehrinfo menulink<?php if($captionclass != null) { echo ' ' . $linkbtnclass; } ?>" href="<?php echo $link; ?>"><?php echo $link_btn_txt; ?></a>
 										<?php }
@@ -404,7 +404,7 @@ if($pagination_type == 'custom' || $effect == 'cube' || $effect == 'coverflow' |
 									<?php } ?>
 									<?php if ($image_nolink == '0') {
 										if ($image_customlink != null) { ?>
-											<a class="mehrinfo customlink<?php if($captionclass != null) { echo ' ' . $linkbtnclass; } ?>" href="<?php echo JURI::root(). $image_customlink; ?>"><?php echo $link_btn_txt; ?></a>
+											<a class="mehrinfo customlink<?php if($captionclass != null) { echo ' ' . $linkbtnclass; } ?>" href="<?php echo $image_customlink; ?> target="_blank"><?php echo $link_btn_txt; ?></a>
 										<?php } else { ?>
 											<a class="mehrinfo menulink<?php if($captionclass != null) { echo ' ' . $linkbtnclass; } ?>" href="<?php echo $link; ?>"><?php echo $link_btn_txt; ?></a>
 										<?php }
@@ -502,7 +502,7 @@ if($pagination_type == 'custom' || $effect == 'cube' || $effect == 'coverflow' |
 												<?php } ?>
 												<?php if ($nested_image_nolink == '0') {
 													if ($nested_image_customlink != null) { ?>
-														<a class="mehrinfo customlink<?php if($captionclass != null) { echo ' ' . $linkbtnclass; } ?>" href="<?php echo JURI::root(). $nested_image_customlink; ?>"><?php echo $link_btn_txt; ?></a>
+														<a class="mehrinfo customlink<?php if($captionclass != null) { echo ' ' . $linkbtnclass; } ?>" href="<?php echo $nested_image_customlink; ?> target="_blank"><?php echo $link_btn_txt; ?></a>
 													<?php } else { ?>
 														<a class="mehrinfo menulink<?php if($captionclass != null) { echo ' ' . $linkbtnclass; } ?>" href="<?php echo $nested_link; ?>"><?php echo $link_btn_txt; ?></a>
 													<?php }
@@ -529,7 +529,7 @@ if($pagination_type == 'custom' || $effect == 'cube' || $effect == 'coverflow' |
 												<?php } ?>
 												<?php if ($nested_image_nolink == '0') {
 													if ($nested_image_customlink != null) { ?>
-														<a class="mehrinfo customlink<?php if($captionclass != null) { echo ' ' . $linkbtnclass; } ?>" href="<?php echo JURI::root(). $nested_image_customlink; ?>"><?php echo $link_btn_txt; ?></a>
+														<a class="mehrinfo customlink<?php if($captionclass != null) { echo ' ' . $linkbtnclass; } ?>" href="<?php echo $nested_image_customlink; ?> target="_blank"><?php echo $link_btn_txt; ?></a>
 													<?php } else { ?>
 														<a class="mehrinfo menulink<?php if($captionclass != null) { echo ' ' . $linkbtnclass; } ?>" href="<?php echo $nested_link; ?>"><?php echo $link_btn_txt; ?></a>
 													<?php }
