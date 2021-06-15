@@ -158,7 +158,7 @@ if($params['loadFiles'] != 'hide') {
 		$params['effect'] == 'coverflow' ||
 		$params['effect'] == 'flip' ||
 		$params['fullscreen'] == ' swiper-fullscreen' ||
-		$params['overlay'] == ' swiper-overlay' ||
+		$params['overlay'] ||
 		$params['navigation_type'] != '0' ||
 		$params['lazyload'] ||
 		$params['type__select'] == '3'
@@ -181,8 +181,9 @@ if($params['effect'] == 'cube' || $params['effect'] == 'coverflow' || $params['e
 $swiper__body = '';
 $swiper__body .= 'class="swiper__body"';
 $swiper__body .= ' id="swiper__elementID__' . $ID. '"';
-$swiper__body .= ' style="--swiper-theme-color:' . $params['themeColor'] . ';"';
+$swiper__body .= ' style="--swiper-theme-color:' . $params['themeColor'] . ';';
 $swiper__body .= $overlay__var;
+$swiper__body .= '"';
 
 
 // swiper container
