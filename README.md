@@ -1,3 +1,4 @@
+![swiper-hero](https://user-images.githubusercontent.com/60511211/122031841-5e5cda80-cdcf-11eb-9fc0-be89ce2acc72.png)
 # Swiper Slider for Joomla! CMS™
 
 Swiper is the most modern free mobile touch slider with hardware accelerated transitions and amazing native behavior.
