@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="4.0" client="site" method="upgrade">
+<extension type="module" client="site" method="upgrade">
 	<name>MOD_SWIPER_SLIDER</name>
-	<creationDate>Januar 2020</creationDate>
 	<author>Alexander Klein | Vladimir Kharlampidi</author>
-	<authorEmail>alexander.klein@fact-werbeagentur.de</authorEmail>
-	<copyright>Copyright (C) 2020 Alexander Klein</copyright>
+	<creationDate>Januar 2020</creationDate>
+	<copyright>Copyright (C) 2021 Alexander Klein</copyright>
 	<license>GNU General Public License version 2 or later</license>
-	<version>2.0</version>
+	<authorEmail>alexander.klein@fact-werbeagentur.de</authorEmail>
+	<version>2.3.2</version>
 	<description>MOD_SWIPER_SLIDER_DESC</description>
-
+	<namespace path="src">Joomla\Module\Swiper</namespace>
 	<files>
-		<filename module="mod_swiper_slider">mod_swiper_slider.php</filename>
-		<filename>changelog.md</filename>
-		<filename>index.html</filename>
 		<filename>mod_swiper_slider.xml</filename>
-		<folder>assets</folder>
+		<filename module="mod_swiper_slider">mod_swiper_slider.php</filename>
+		<filename>index.html</filename>
+		<folder>src</folder>
 		<folder>tmpl</folder>
-		<folder>language</folder>
 	</files>
-
+	<media folder="assets" destination="mod_swiper_slider">
+		<filename>swiper-hero.png</filename>
+		<filename>swiper.png</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
 	<languages folder="language">
 		<language tag="de-DE">de-DE/de-DE.mod_swiper_slider.ini</language>
 		<language tag="de-DE">de-DE/de-DE.mod_swiper_slider.sys.ini</language>
 		<language tag="en-GB">en-GB/en-GB.mod_swiper_slider.ini</language>
 		<language tag="en-GB">en-GB/en-GB.mod_swiper_slider.sys.ini</language>
 	</languages>
-
 	<updateservers>
 		<server type="extension" name="Swiper Slider" priority="1">https://raw.githubusercontent.com/al-kln/updateservers/main/j4_mod_swiper_slider.xml</server>
 	</updateservers>
-
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
@@ -168,6 +169,20 @@
 
 
 				<field
+					name="ratio"
+					type="list"
+					default="auto"
+					label="MOD_SWIPER_SLIDER_RATIO"
+					description="MOD_SWIPER_SLIDER_RATIO_DESC">
+						<option value="ratio__auto">MOD_SWIPER_SLIDER_RATIO_AUTO</option>
+						<option value="ratio-1x1">MOD_SWIPER_SLIDER_RATIO_1X1</option>
+						<option value="ratio-4x3">MOD_SWIPER_SLIDER_RATIO_4X3</option>
+						<option value="ratio-16x9">MOD_SWIPER_SLIDER_RATIO_16X9</option>
+						<option value="ratio-21x9">MOD_SWIPER_SLIDER_RATIO_21X9</option>
+				</field>
+
+
+				<field
 					name="initialSlide"
 					type="integer"
 					default="0"
@@ -177,6 +192,7 @@
 					label="MOD_SWIPER_SLIDER_INITIALSLIDE"
 					description="MOD_SWIPER_SLIDER_INITIALSLIDE_DESC"
 				/>
+
 
 				<field
 					name="direction"
@@ -299,17 +315,246 @@
 
 
 				<field
-					name="cssMode_spacer"
-					type="spacer"
-					hr="true"
+					name="loadFiles"
+					type="list"
+					default="auto"
+					label="MOD_SWIPER_SLIDER_LOAD_FILES"
+					description="MOD_SWIPER_SLIDER_LOAD_FILES_DESC">
+						<option value="auto">MOD_SWIPER_SLIDER_LOAD_FILES_AUTO</option>
+						<option value="vendor">MOD_SWIPER_SLIDER_LOAD_FILES_VENDOR</option>
+						<option value="hide">MOD_SWIPER_SLIDER_LOAD_FILES_HIDE</option>
+				</field>
+
+
+				<field
+					name="allowSlideNext"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="MOD_SWIPER_SLIDER_ALLOW_SLIDE_NEXT"
+					description="MOD_SWIPER_SLIDER_ALLOW_SLIDE_NEXT_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="allowSlidePrev"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="MOD_SWIPER_SLIDER_ALLOW_SLIDE_PREV"
+					description="MOD_SWIPER_SLIDER_ALLOW_SLIDE_PREV_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="allowTouchMove"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="MOD_SWIPER_SLIDER_ALLOW_TOUCH_MOVE"
+					description="MOD_SWIPER_SLIDER_ALLOW_TOUCH_MOVE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="breakpointsBase"
+					type="list"
+					default="window"
+					label="MOD_SWIPER_SLIDER_BREAKPOINT_BASE"
+					description="MOD_SWIPER_SLIDER_BREAKPOINT_BASE_DESC">
+						<option value="window">MOD_SWIPER_SLIDER_BREAKPOINT_BASE_WINDOW</option>
+						<option value="container">MOD_SWIPER_SLIDER_BREAKPOINT_BASE_CONTAINER</option>
+				</field>
+
+
+				<field
+					name="followFinger"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="MOD_SWIPER_SLIDER_FOLLOW_FINGER"
+					description="MOD_SWIPER_SLIDER_FOLLOW_FINGER_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="init"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="MOD_SWIPER_SLIDER_INIT"
+					description="MOD_SWIPER_SLIDER_INIT_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="observeParents"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="MOD_SWIPER_SLIDER_OBSERVE_PARENTS"
+					description="MOD_SWIPER_SLIDER_OBSERVE_PARENTS_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+
+				<field
+					name="observeSlideChildren"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="MOD_SWIPER_SLIDER_OBSERVE_SLIDE_CHILDREN"
+					description="MOD_SWIPER_SLIDER_OBSERVE_SLIDE_CHILDREN_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="observer"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="MOD_SWIPER_SLIDER_OBSERVER"
+					description="MOD_SWIPER_SLIDER_OBSERVER_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="passiveListeners"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="MOD_SWIPER_SLIDER_PASSIVE_LISTENERS"
+					description="MOD_SWIPER_SLIDER_PASSIVE_LISTENERS_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
+
+				<field
+					name="preloadImages"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="MOD_SWIPER_SLIDER_PRELOAD_IMAGES"
+					description="MOD_SWIPER_SLIDER_PRELOAD_IMAGES_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="preventInteractionOnTransition"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="MOD_SWIPER_SLIDER_PREVENT_INTERACTION_ON_TRANSITION"
+					description="MOD_SWIPER_SLIDER_PREVENT_INTERACTION_ON_TRANSITION_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="shortSwipes"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="MOD_SWIPER_SLIDER_SHORT_SWIPES"
+					description="MOD_SWIPER_SLIDER_SHORT_SWIPES_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="simulateTouch"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="MOD_SWIPER_SLIDER_SIMULATE_TOUCH"
+					description="MOD_SWIPER_SLIDER_SIMULATE_TOUCH_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="touchEventsTarget"
+					type="list"
+					default="container"
+					label="MOD_SWIPER_SLIDER_TOUCH_EVENT_TARGETS"
+					description="MOD_SWIPER_SLIDER_TOUCH_EVENT_TARGETS_DESC">
+						<option value="container">MOD_SWIPER_SLIDER_TOUCH_EVENT_TARGETS_CONTAINER</option>
+						<option value="wrapper">MOD_SWIPER_SLIDER_TOUCH_EVENT_TARGETS_WRAPPER</option>
+				</field>
+
+
+				<field
+					name="updateOnImagesReady"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="MOD_SWIPER_SLIDER_UPDATE_ON_IMAGES_READY"
+					description="MOD_SWIPER_SLIDER_UPDATE_ON_IMAGES_READY_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="updateOnWindowResize"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="MOD_SWIPER_SLIDER_UPDATE_ON_WINDOW_RESIZE"
+					description="MOD_SWIPER_SLIDER_UPDATE_ON_WINDOW_RESIZE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="url"
+					type="text"
+					label="MOD_SWIPER_SLIDER_URL"
+					description="MOD_SWIPER_SLIDER_URL_DESC"
 				/>
 
 
 				<field
-					name="cssMode_header"
-					type="spacer"
-					label="MOD_SWIPER_SLIDER_CSSMODE_HEADER"
+					name="userAgent"
+					type="text"
+					label="MOD_SWIPER_SLIDER_USER_AGENT"
+					description="MOD_SWIPER_SLIDER_USER_AGENT_DESC"
 				/>
+
+
+				<field
+					name="createElements"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					readonly="true"
+					label="MOD_SWIPER_SLIDER_CREATE_ELEMENTS"
+					description="MOD_SWIPER_SLIDER_CREATE_ELEMENTS_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
 
 
 				<field
@@ -319,6 +564,18 @@
 					default="0"
 					label="MOD_SWIPER_SLIDER_CSSMODE"
 					description="MOD_SWIPER_SLIDER_CSSMODE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="grabCursor"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					label="MOD_SWIPER_SLIDER_GRAB_CURSOR"
+					description="MOD_SWIPER_SLIDER_GRAB_CURSOR_DESC">
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
 				</field>
@@ -487,39 +744,6 @@
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
 				</field>
-
-
-				<field
-					name="grabCursor_spacer"
-					type="spacer"
-					hr="true"
-				/>
-
-
-				<field
-					name="grabCursor_header"
-					type="spacer"
-					label="MOD_SWIPER_SLIDER_GRAB_CURSOR_HEADER"
-				/>
-
-
-				<field
-					name="grabCursor"
-					type="radio"
-					layout="joomla.form.field.radio.switcher"
-					default="0"
-					label="MOD_SWIPER_SLIDER_GRAB_CURSOR"
-					description="MOD_SWIPER_SLIDER_GRAB_CURSOR_DESC">
-						<option value="0">JNO</option>
-						<option value="1">JYES</option>
-				</field>
-
-
-				<field
-					name="touches_touch_resistence_swiping_header"
-					type="spacer"
-					label="MOD_SWIPER_SLIDER_TOUCHES_TOUCH_RESISTENCE_SWIPING_HEADER"
-				/>
 
 
 				<field
@@ -765,7 +989,6 @@
 				/>
 
 
-
 				<field
 					name="breakpoints"
 					type="subform"
@@ -806,20 +1029,51 @@
 								<field
 									name="viewportAttribute"
 									type="list"
-									default="576"
+									default="direction"
 									label="MOD_SWIPER_SLIDER_VIEWPORT_ATTRIBUTE"
 									description="MOD_SWIPER_SLIDER_VIEWPORT_ATTRIBUTE_DESC">
+										<option value="direction">MOD_SWIPER_SLIDER_VIEWPORT_ATTRIBUTE_DIR</option>
 										<option value="slidesPerView">MOD_SWIPER_SLIDER_VIEWPORT_ATTRIBUTE_SPV</option>
 										<option value="slidesPerGroup">MOD_SWIPER_SLIDER_VIEWPORT_ATTRIBUTE_SPG</option>
 										<option value="spaceBetween">MOD_SWIPER_SLIDER_VIEWPORT_ATTRIBUTE_SB</option>
 										<option value="slidesPerColumn">MOD_SWIPER_SLIDER_VIEWPORT_ATTRIBUTE_SPC</option>
+										<option value="loop">MOD_SWIPER_SLIDER_VIEWPORT_ATTRIBUTE_LOOP</option>
+								</field>
+
+
+								<field
+									name="breakpoints_values_spacer"
+									type="spacer"
+									hr="true"
+								/>
+
+
+								<field
+									name="breaktpointDirection"
+									type="list"
+									default="vertical"
+									label="MOD_SWIPER_SLIDER_BREAKPOINT_DIRECTION"
+									description="MOD_SWIPER_SLIDER_BREAKPOINT_DIRECTION_DESC">
+										<option value="vertical">MOD_SWIPER_SLIDER_BREAKPOINT_DIRECTION_VERTICAL</option>
+										<option value="horizontal">MOD_SWIPER_SLIDER_BREAKPOINT_DIRECTION_HORIZONTAL</option>
+								</field>
+
+
+								<field
+									name="breaktpointLoop"
+									type="radio"
+									layout="joomla.form.field.radio.switcher"
+									default="0"
+									label="MOD_SWIPER_SLIDER_BREAKPOINT_LOOP"
+									description="MOD_SWIPER_SLIDER_BREAKPOINT_LOOP_DESC">
+										<option value="1">JYES</option>
+										<option value="0">JNO</option>
 								</field>
 
 								
 								<field
 									name="viewportValue"
 									type="text"
-									default=""
 									label="MOD_SWIPER_SLIDER_VIEWPORT_VALUE"
 									description="MOD_SWIPER_SLIDER_VIEWPORT_VALUE_DESC"
 								/>
@@ -1021,6 +1275,15 @@
 				/>
 
 
+				<field
+					name="globalAltTag"
+					showon="typeselect:1"
+					type="text"
+					label="MOD_SWIPER_SLIDER_GLOBAL_ALT_TAG"
+					description="MOD_SWIPER_SLIDER_GLOBAL_ALT_TAG_DESC"
+				/>
+
+
 		
 				<field
 					name="carouselimages"
@@ -1211,7 +1474,7 @@
 						<field
 							name="nested_direction"
 							type="list"
-							default="0"
+							default="horizontal"
 							label="MOD_SWIPER_SLIDER_DIRECTION"
 							description="MOD_SWIPER_SLIDER_DIRECTION_DESC">
 								<option value="horizontal">MOD_SWIPER_SLIDER_DIRECTION_HORIZONTAL</option>
@@ -1388,8 +1651,8 @@
 							type="text"
 							default=""
 							filter="safehtml"
-							label="MOD_SWIPER_SLIDER_PARALLAX_HEADING"
-							description="MOD_SWIPER_SLIDER_PARALLAX_HEADING_DESC"
+							label="MOD_SWIPER_SLIDER_PARALLAX_HEADER"
+							description="MOD_SWIPER_SLIDER_PARALLAX_HEADER_DESC"
 						/>
 
 						<field
@@ -1409,6 +1672,39 @@
 							label="MOD_SWIPER_SLIDER_PARALLAX_TEXT"
 							description="MOD_SWIPER_SLIDER_PARALLAX_TEXT_DESC"
 						/>
+
+						<field
+							name="prlx_header_value"
+							type="number"
+							default="-100"
+							min="-500"
+							max="500"
+							step="1"
+							label="MOD_SWIPER_SLIDER_PARALLAX_HEADER_VALUE"
+							description="MOD_SWIPER_SLIDER_PARALLAX_HEADER_VALUE_DESC"
+						/>
+
+						<field
+							name="prlx_subtitle_value"
+							type="number"
+							default="-200"
+							min="-500"
+							max="500"
+							step="1"
+							label="MOD_SWIPER_SLIDER_PARALLAX_SUBTITLE_VALUE"
+							description="MOD_SWIPER_SLIDER_PARALLAX_SUBTITLE_VALUE_DESC"
+						/>
+
+						<field
+							name="prlx_text_value"
+							type="number"
+							default="-300"
+							min="-500"
+							max="500"
+							step="1"
+							label="MOD_SWIPER_SLIDER_PARALLAX_TEXT_VALUE"
+							description="MOD_SWIPER_SLIDER_PARALLAX_TEXT_VALUE_DESC"
+						/>
 						
 											
 					</form>
@@ -1426,6 +1722,19 @@
 					type="spacer"
 					label="MOD_SWIPER_SLIDER_COMPONENTS_HEADER"
 				/>
+
+
+				<field
+					name="components_placement"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="navigation:1"
+					label="MOD_SWIPER_SLIDER_COMPONENTS_PLACEMENT"
+					description="MOD_SWIPER_SLIDER_COMPONENTS_PLACEMENT_DESC">
+						<option value="0">MOD_SWIPER_SLIDER_COMPONENTS_PLACEMENT_INSIDE</option>
+						<option value="1">MOD_SWIPER_SLIDER_COMPONENTS_PLACEMENT_OUTSIDE</option>
+				</field>
 
 
 				<field
@@ -1471,8 +1780,8 @@
 				<field
 					name="navigation_type_icon_prev"
 					type="text"
-					default=""
-					showon="navigation:1[AND]navigation_type:1[OR]navigation_type:2"
+					hint="bi bi-chevron-left"
+					showon="navigation:1[AND]navigation_type!:0"
 					label="MOD_SWIPER_SLIDER_NAVIGATION_TYPE_ICON_PREV"
 					description="MOD_SWIPER_SLIDER_NAVIGATION_TYPE_ICON_PREV_DESC"
 				/>
@@ -1481,24 +1790,11 @@
 				<field
 					name="navigation_type_icon_next"
 					type="text"
-					default=""
-					showon="navigation:1[AND]navigation_type:1[OR]navigation_type:2"
+					hint="bi bi-chevron-right"
+					showon="navigation:1[AND]navigation_type!:0"
 					label="MOD_SWIPER_SLIDER_NAVIGATION_TYPE_ICON_NEXT"
 					description="MOD_SWIPER_SLIDER_NAVIGATION_TYPE_ICON_NEXT_DESC"
 				/>
-
-
-				<field
-					name="navigation_placement"
-					type="radio"
-					layout="joomla.form.field.radio.switcher"
-					default="0"
-					showon="navigation:1"
-					label="MOD_SWIPER_SLIDER_NAVIGATION_PLACEMENT"
-					description="MOD_SWIPER_SLIDER_NAVIGATION_PLACEMENT_DESC">
-						<option value="0">MOD_SWIPER_SLIDER_NAVIGATION_PLACEMENT_INSIDE</option>
-						<option value="1">MOD_SWIPER_SLIDER_NAVIGATION_PLACEMENT_OUTSIDE</option>
-				</field>
 
 
 				<field
@@ -1698,6 +1994,19 @@
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
 				</field>
+
+
+				<field
+					name="pauseOnMouseEnter"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="0"
+					showon="autoplay:1"
+					label="MOD_SWIPER_SLIDER_PAUSE_ON_MOUSE_ENTER"
+					description="MOD_SWIPER_SLIDER_PAUSE_ON_MOUSE_ENTER_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>		
 
 
 				<field
@@ -2151,13 +2460,13 @@
 
 			</fieldset>
 
-
 			<fieldset name="advanced">
 				<field
 					name="layout"
 					type="modulelayout"
 					label="JFIELD_ALT_LAYOUT_LABEL"
-					class="custom-select"
+					class="form-select"
+					validate="moduleLayout"
 				/>
 
 				<field
@@ -2172,7 +2481,7 @@
 					name="cache"
 					type="list"
 					label="COM_MODULES_FIELD_CACHING_LABEL"
-					default="0"
+					default="1"
 					filter="integer"
 					validate="options"
 					>
@@ -2184,16 +2493,16 @@
 					name="cache_time"
 					type="number"
 					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
-					default="0"
+					default="900"
 					filter="integer"
 				/>
 
 				<field
 					name="cachemode"
 					type="hidden"
-					default="itemid"
+					default="static"
 					>
-					<option value="itemid"></option>
+					<option value="static"></option>
 				</field>
 			</fieldset>
 		</fields>
