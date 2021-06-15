@@ -1,5 +1,10 @@
 # Changelog
 
+## SwiperSlider 2.3.2.3
+- update | overlay in default.php
+
+## SwiperSlider 2.3.2.2
+- update | language files
 
 ## SwiperSlider 2.3.2
 - update | core files
@@ -9,6 +14,7 @@
 - fix | components placement
 - fix | order prev / next
 
+------------------------------
 
 # [6.7.0](https://github.com/nolimits4web/Swiper/compare/v6.6.2...v6.7.0) (2021-05-31)
 
