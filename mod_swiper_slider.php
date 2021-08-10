@@ -117,6 +117,11 @@ require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 
 	<?php if($params['effect'] != 'slide') { ?>
 		effect: '<?php echo $params['effect']; ?>',
 	<?php } ?> 
+	<?php if($params['effect'] == 'fade' && $params['crossFade']) { ?>
+		fadeEffect: {
+			crossFade: true
+		},
+	<?php } ?>
 	<?php if($params['effect'] == 'cube') { ?>
 		grabCursor: true,
 		cubeEffect: {
