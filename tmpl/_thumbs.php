@@ -10,9 +10,7 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Uri\Uri;
 
-
 $swiper__wrapper__class .= ' swiper__wrapper__thumbs';
-
 ?>
 
 <div class="swiper__thumbs">

@@ -13,7 +13,6 @@ use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\Module\Swiper\Site\Helper\SwiperHelper;
 use Joomla\CMS\Factory;
 
-
 $params 				= SwiperHelper::getParams($params);
 
 $swiper__id	 			= 'moduleID__' . $module->id;
@@ -22,13 +21,11 @@ $scriptID				= rand(100, 1000);
 $database 				= Factory::getDBO();
 $document 				= Factory::getDocument();
 
-
 $mod__class = ' ';
 $modSFX = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
 if($modSFX) {
     $mod__class .= ' ' . $modSFX;
 }
-
 
 if (!function_exists('sanitizeFileName')) {
 	function sanitizeFileName($fileName) {
@@ -63,7 +60,6 @@ if (!function_exists('sanitizeFileName')) {
 	}
 }
 
-
 switch ($params['typeselect']) {
 	case '0':
 		$slider__layout = '_images';
@@ -79,13 +75,8 @@ switch ($params['typeselect']) {
 		break;
 }
 
-
-
 require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 'default'));
-
-
 ?>
-
 
 <?php // init swiper ?>
 <script>

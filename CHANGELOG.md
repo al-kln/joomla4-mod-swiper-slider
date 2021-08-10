@@ -1,5 +1,8 @@
 # Changelog
 
+## SwiperSlider 2.4.3
+- fix | several files
+
 ## SwiperSlider 2.4.0
 - add | crossfade
 

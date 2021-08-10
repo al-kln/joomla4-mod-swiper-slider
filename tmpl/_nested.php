@@ -11,11 +11,8 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Router\Route;
 
-
 $swiper__wrapper__class .= ' swiper__type__nested';
-
 ?>
-
 
 <div class="<?php echo $swiper__wrapper__class; ?>">
 

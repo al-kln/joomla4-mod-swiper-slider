@@ -12,7 +12,6 @@ use Joomla\CMS\Helper\ModuleHelper;
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Filesystem\Folder;
 
-
 ///////////////
 // settings //
 /////////////
