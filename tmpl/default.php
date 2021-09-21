@@ -187,13 +187,13 @@ $swiper__body .= '"';
 
 // swiper container
 $swiper__container = '';
-$swiper__container .= 'class="swiper-container' . $overlay . $fullscreen . $mod__class . '"';
+$swiper__container .= 'class="swiper swiper-container' . $overlay . $fullscreen . $mod__class . '"';
 $swiper__container .= ' id="' . $swiper__id . '"';
 $swiper__container .= ' dir="' . $params['viewDirection'] . '"';
 
 // swiper thumbs container
 $swiper__thumbs__container = '';
-$swiper__thumbs__container .= 'class="swiper-container thumbs-swiper-container' . $overlay . $fullscreen . $mod__class . '"';
+$swiper__thumbs__container .= 'class="swiper swiper-container thumbs-swiper-container' . $overlay . $fullscreen . $mod__class . '"';
 $swiper__thumbs__container .= ' id="thumbs__' . $swiper__id . '"';
 $swiper__thumbs__container .= ' dir="' . $params['viewDirection'] . '"';
 

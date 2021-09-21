@@ -25,9 +25,9 @@ $swiper__wrapper__class .= ' swiper__type__nested';
         $nested_direction       = $value->nested_direction;
 
         if($nested_direction == 'vertical') {
-            $nested__container__class = 'swiper-container swiper-container-v';
+            $nested__container__class = 'swiper swiper-container swiper-container-v';
         } else {
-            $nested__container__class = 'swiper-container swiper-container-h';
+            $nested__container__class = 'swiper swiper-container swiper-container-h';
         }
 
     ?>

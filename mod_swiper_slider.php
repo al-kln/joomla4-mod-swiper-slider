@@ -113,6 +113,35 @@ require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 
 			crossFade: true
 		},
 	<?php } ?>
+	<?php if($params['effect'] == 'cards') { ?>
+		cardsEffect: {
+			<?php if(!$params['cardsEffect__slideShadows']) { ?>
+				slideShadows: false,
+			<?php } ?>
+			<?php if($params['cardsEffect__transformEl'] != null) { ?>
+				transformEl: '<?php echo $params['cardsEffect__transformEl']; ?>',
+			<?php } ?>
+		},
+	<?php } ?>
+	<?php if($params['effect'] == 'creative') { ?>
+		creativeEffect: {
+			<?php if($params['creativeEffect__limitProgress'] != '1') { ?>
+				limitProgress: <?php echo $params['creativeEffect__limitProgress']; ?>,
+			<?php } ?>
+			<?php if(!$params['creativeEffect__perspective']) { ?>
+				perspective: false,
+			<?php } ?>
+			<?php if($params['creativeEffect__progressMultipler'] != '1') { ?>
+				progressMultipler: <?php echo $params['creativeEffect__progressMultipler']; ?>,
+			<?php } ?>
+			<?php if($params['creativeEffect__shadowPerProgress']) { ?>
+				shadowPerProgress: true,
+			<?php } ?>
+			<?php if($params['creativeEffect__transformEl'] != null) { ?>
+				transformEl: '<?php echo $params['creativeEffect__transformEl']; ?>',
+			<?php } ?>	
+		},
+	<?php } ?>
 	<?php if($params['effect'] == 'cube') { ?>
 		grabCursor: true,
 		cubeEffect: {
@@ -137,8 +166,11 @@ require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 
 	<?php if($params['effect'] == 'flip') { ?>
 		grabCursor: true,
 	<?php } ?>
-	<?php if($params['watchOverflow']) { ?>
-		watchOverflow: true,
+	<?php if(!$params['watchOverflow']) { ?>
+		watchOverflow: false,
+	<?php } ?>
+	<?php if($params['watchSlidesProgress']) { ?>
+		watchSlidesProgress: true,
 	<?php } ?>
 	<?php if(!$params['allowSlideNext']) { ?>
 		allowSlideNext: false,
@@ -182,8 +214,11 @@ require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 
 	<?php if(!$params['simulateTouch']) { ?>
 		simulateTouch: false,
 	<?php } ?>
-	<?php if($params['touchEventsTarget'] != 'container') { ?>
-		touchEventsTarget: 'wrapper',
+	<?php if(!$params['resizeObserver']) { ?>
+		resizeObserver: false,
+	<?php } ?>
+	<?php if($params['touchEventsTarget'] != 'wrapper') { ?>
+		touchEventsTarget: 'container',
 	<?php } ?>
 	<?php if(!$params['updateOnImagesReady']) { ?>
 		updateOnImagesReady: false,
@@ -212,11 +247,11 @@ require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 
 	<?php if($params['slidesPerView'] != '1') { ?>
 		slidesPerView: <?php if($params['slidesPerView'] != 'auto') { echo $params['slidesPerView']; } else { echo "'auto'"; } ?>,
 	<?php } ?>
-	<?php if($params['slidesPerColumn'] != '1') { ?>
-		slidesPerColumn: <?php echo $params['slidesPerColumn']; ?>,
-	<?php } ?>
 	<?php if($params['slidesPerGroup'] != '1') { ?>
 		slidesPerGroup: <?php echo $params['slidesPerGroup']; ?>,
+	<?php } ?>
+	<?php if($params['slidesPerGroupAuto']) { ?>
+		slidesPerGroupAuto: true,
 	<?php } ?>
 	<?php if($params['slidesPerGroupSkip'] != '0') { ?>
 		slidesPerGroupSkip: <?php echo $params['slidesPerGroupSkip']; ?>,
