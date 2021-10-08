@@ -6,7 +6,7 @@
 	<copyright>Copyright (C) 2021 Alexander Klein</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>alexander.klein@fact-werbeagentur.de</authorEmail>
-	<version>3.0.0</version>
+	<version>3.0.1</version>
 	<description>MOD_SWIPER_SLIDER_DESC</description>
 	<namespace path="src">Joomla\Module\Swiper</namespace>
 	<files>
@@ -375,6 +375,16 @@
 
 
 				<field
+					name="creativeEffect__next"
+					type="textarea"
+					filter="raw"
+					showon="effect:creative"
+					label="MOD_SWIPER_SLIDER_CREATIVEEFFECT_NEXT"
+					description="MOD_SWIPER_SLIDER_CREATIVEEFFECT_NEXT_DESC"
+				/>
+
+
+				<field
 					name="creativeEffect__perspective"
 					type="radio"
 					layout="joomla.form.field.radio.switcher"
@@ -385,6 +395,16 @@
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
 				</field>
+
+
+				<field
+					name="creativeEffect__prev"
+					type="textarea"
+					filter="raw"
+					showon="effect:creative"
+					label="MOD_SWIPER_SLIDER_CREATIVEEFFECT_PREV"
+					description="MOD_SWIPER_SLIDER_CREATIVEEFFECT_PREV_DESC"
+				/>
 
 
 				<field
@@ -420,6 +440,14 @@
 					showon="effect:creative"
 					label="MOD_SWIPER_SLIDER_CREATIVEEFFECT_TRANSFORM_EL"
 					description="MOD_SWIPER_SLIDER_CREATIVEEFFECT_TRANSFORM_EL_DESC"
+				/>
+
+
+				<field
+					name="watchOverflow__spacer"
+					type="spacer"
+					showon="effect:creative"
+					hr="true"
 				/>
 
 

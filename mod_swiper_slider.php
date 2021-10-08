@@ -128,8 +128,14 @@ require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 
 			<?php if($params['creativeEffect__limitProgress'] != '1') { ?>
 				limitProgress: <?php echo $params['creativeEffect__limitProgress']; ?>,
 			<?php } ?>
+			<?php if($params['creativeEffect__next']) { ?>
+				next: <?php echo $params['creativeEffect__next']; ?>,
+			<?php } ?>
 			<?php if(!$params['creativeEffect__perspective']) { ?>
 				perspective: false,
+			<?php } ?>
+			<?php if($params['creativeEffect__prev']) { ?>
+				prev: <?php echo $params['creativeEffect__prev']; ?>,
 			<?php } ?>
 			<?php if($params['creativeEffect__progressMultipler'] != '1') { ?>
 				progressMultipler: <?php echo $params['creativeEffect__progressMultipler']; ?>,

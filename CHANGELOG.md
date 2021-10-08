@@ -1,5 +1,11 @@
 # Changelog
 
+## SwiperSlider 3.0.1
+- update | core to 7.0.8
+- update xml hr
+- fix creative required prev, next
+- fix language files
+
 ## SwiperSlider 3.0.0
 - update | core to 7.*
 - **creative-effect:** add `shadowPerProgress` parameter
