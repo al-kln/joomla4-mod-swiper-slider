@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  mod_swiper_slider
  *
- * @copyright   Copyright (C) 2005 - 2021 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2022 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -222,6 +222,9 @@ require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 
 	<?php } ?>
 	<?php if(!$params['resizeObserver']) { ?>
 		resizeObserver: false,
+	<?php } ?>
+	<?php if($params['rewind']) { ?>
+		rewind: true,
 	<?php } ?>
 	<?php if($params['touchEventsTarget'] != 'wrapper') { ?>
 		touchEventsTarget: 'container',
