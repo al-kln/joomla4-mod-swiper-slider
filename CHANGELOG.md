@@ -1,5 +1,10 @@
 # Changelog
 
+## SwiperSlider 3.2
+- update | core to 8.1.3
+- update | relative path for core files
+- update | list:layout
+
 ## SwiperSlider 3.1
 - update | core to 7.4.1
 - add | rewind option

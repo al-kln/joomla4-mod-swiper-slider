@@ -19,7 +19,7 @@ $swiper__wrapper__class .= ' swiper__type__images';
     <?php
     $swiper__count = 1;
 
-    foreach($params['images'] as $index => $value) {
+    foreach ($params['images'] as $index => $value) :
 
         $image 					    = $value->image;
         $image__alt 			    = $value->image_alt;
@@ -36,24 +36,24 @@ $swiper__wrapper__class .= ' swiper__type__images';
         // swiper slide class
         $swiper__slide__class = 'swiper-slide';
         $swiper__slide__class .= ' swiper__slideID__' . $swiper__count;
-        if($params['ratio'] != 'ratio__auto') {
+        if ($params['ratio'] != 'ratio__auto') :
             $swiper__slide__class .= ' ratio ' . $params['ratio'];
-        }
-        if($image__copyright) { 
+        endif;
+        if ($image__copyright) : 
             $swiper__slide__class .= ' copyright__figcaption';
-        }
+        endif;
 
         // swiper slide data
         $swiper__slide__data = '';
         $alias = sanitizeFileName($image__header);
-        if($params['autoplay'] && $slide__autoplay) {
+        if ($params['autoplay'] && $slide__autoplay) :
             $swiper__slide__data .= ' data-swiper-autoplay="' . $slide__autoplay . '"';
-        }
-        if($params['hashNavigation']) {
+        endif;
+        if ($params['hashNavigation']) :
             $swiper__slide__data .= ' data-hash="' . $alias . '"';
-        } elseif($params['history']) {
+        elseif ($params['history']) :
             $swiper__slide__data .= ' data-history="' . $alias . '"';
-        }
+        endif;
 
 
         // image src elm
@@ -68,12 +68,12 @@ $swiper__wrapper__class .= ' swiper__type__images';
         $background__class = 'slider__image slider__fullscreen__image';
 
         // lazyload
-        if($params['lazyload']) {
+        if ($params['lazyload']) :
             $image__class .= ' swiper-lazy';
             $background__class .= ' swiper-lazy';
             $image__src__elm = 'data-src';
             $background__src__elm = 'data-background="background-image:url(';
-        }
+        endif;
 
         // image output
         $image__output = '<img class="';
@@ -92,68 +92,68 @@ $swiper__wrapper__class .= ' swiper__type__images';
     ?>
 
 
-        <?php if($slider__type == 'special') { ?>
+        <?php if ($slider__type == 'special') : ?>
             <div class="swiper-slide" <?php echo $background__src__elm . $image__src . ')"' . $swiper__slide__data; ?>></div>        
-        <?php } else { ?>
+        <?php else : ?>
         
             <div class="<?php echo $swiper__slide__class; ?>"<?php echo $swiper__slide__data; ?>>	
                 
-                <?php if($slider__type == 'normal') { ?>
+                <?php if ($slider__type == 'normal') : ?>
                     <?php echo $image__output; ?>
                     <?php echo $lazyLoadIcon; ?>
-                <?php } elseif ($slider__type == 'fullscreen') { ?>
+                <?php elseif ($slider__type == 'fullscreen') : ?>
                     <?php echo $background__output; ?>                
-                <?php } ?>
+                <?php endif; ?>
 
                
                 <?php // caption ?>
-                <?php if ($image__header || $image__plus || $image__cap || !$image__nolink) { ?>
+                <?php if ($image__header || $image__plus || $image__cap || !$image__nolink) : ?>
                     <?php // caption begin ?>
                     <div class="<?php echo $caption__class; ?>">
 
                         <?php // image plus ?>
-                       <?php if ($image__plus) { ?>
+                       <?php if ($image__plus) : ?>
                            <img class="<?php echo $image__plus__class; ?>" src="<?php echo Uri::root() . $image__plus; ?>" alt="<?php echo $image__alt; ?>">
-                       <?php } ?>
+                       <?php endif; ?>
                        <?php // caption inner ?>
-                       <?php if ($image__header || $image__cap) { ?>
+                       <?php if ($image__header || $image__cap) : ?>
                            <div class="<?php echo $caption__inner__class; ?>">
                                <?php // caption heading ?>
-                               <?php if ($image__header) { ?>
+                               <?php if ($image__header) : ?>
                                    <<?php echo $heading__tag; ?> class="<?php echo $heading__class; ?>"><?php echo $image__header; ?></<?php echo $heading__tag; ?>>
-                               <?php } ?>
+                               <?php endif; ?>
                                <?php // caption text ?>
-                               <?php if ($image__cap) { ?>
+                               <?php if ($image__cap) : ?>
                                    <p><?php echo $image__cap; ?></p>
-                               <?php } ?>
+                               <?php endif; ?>
                            </div>
-                       <?php } ?>
+                       <?php endif; ?>
                        <?php // caption link ?>
-                       <?php if (!$image__nolink) { ?>
-                            <?php if ($image__customlink__href) { ?>
+                       <?php if (!$image__nolink) : ?>
+                            <?php if ($image__customlink__href) : ?>
                                 <a class="<?php echo $image__customlink__class; ?>" href="<?php echo $image__customlink; ?>"><?php echo $image__link__caption; ?></a>
-                           <?php } else { ?>
+                           <?php else : ?>
                                 <a class="<?php echo $image__menulink__class; ?>" href="<?php echo $image__link__href; ?>"><?php echo $image__link__caption; ?></a>
-                           <?php } ?>
-                        <?php } ?>
+                           <?php endif; ?>
+                        <?php endif; ?>
                    </div>
-                <?php } ?>
+                <?php endif; ?>
                 <?php // copyright ?>   
-                <?php if($image__copyright) { ?>
+                <?php if ($image__copyright) : ?>
                     <figcaption class="<?php echo $image__copyright__class; ?>">&copy;<?php echo $image__copyright; ?></figcaption>
-                <?php } ?>
+                <?php endif; ?>
             </div>
 
 
-            <?php if ($slider__type == 'fullscreen') { ?>
+            <?php if ($slider__type == 'fullscreen') : ?>
                 </div>	
                 <?php echo $lazyLoadIcon; ?>              
-            <?php } ?>
+            <?php endif; ?>
 
-        <?php } ?>
+        <?php endif; ?>
     
         <?php $swiper__count++; 
-    }
+    endforeach;
 
     ?>
 </div>

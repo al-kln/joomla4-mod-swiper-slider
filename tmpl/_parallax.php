@@ -28,13 +28,13 @@ $parallax__data = ' data-swiper-parallax="' . $params['parallax_value'] . '"';
 
 
 <div <?php echo $parallax__class . $parallax__style . $parallax__data; ?>></div>
-<?php if($params['parallax_copyright']) { ?>
+<?php if ($params['parallax_copyright']) : ?>
     <span class="parallax-copyright"><?php echo $params['parallax_copyright']; ?></span>
-<?php } ?>
+<?php endif; ?>
 
 <div class="<?php echo $swiper__wrapper__class; ?>">
     <?php
-    foreach($params['parallax_slides'] as $index => $value) {
+    foreach ($params['parallax_slides'] as $index => $value) :
         $prlx__header		    = $value->prlx_header;
         $prlx__subtitle		    = $value->prlx_subtitle;
         $prlx__text			    = $value->prlx_text;
@@ -80,17 +80,17 @@ $parallax__data = ' data-swiper-parallax="' . $params['parallax_value'] . '"';
     ?>
 
     <div class="swiper-slide">
-        <?php if($prlx__header) {
+        <?php if ($prlx__header) :
             echo $prlx__header__output; 
-        } ?>
-        <?php if($prlx__subtitle) {
+        endif; ?>
+        <?php if ($prlx__subtitle) :
             echo $prlx__subtitle__output; 
-        } ?>
-        <?php if($prlx__text) {
+        endif; ?>
+        <?php if ($prlx__text) :
             echo $prlx__text__output; 
-        } ?>
+        endif; ?>
     </div>
 
-    <?php } ?>
+    <?php endforeach; ?>
 </div>
 

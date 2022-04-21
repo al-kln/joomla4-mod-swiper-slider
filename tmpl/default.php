@@ -25,9 +25,9 @@ $image__link__class		= $params['linkbtnclass'];
 
 // caption class
 $caption__class = 'swiper__caption';
-if($caption__custom__class) {
+if ($caption__custom__class) :
 	$caption__class .= ' ' . $caption__custom__class;
-}
+endif;
 
 // caption inner class
 $caption__inner__class = 'swiper__inner__caption';
@@ -41,10 +41,10 @@ $heading__class = 'slide__heading';
 // image links
 $image__menulink__class = 'swiper__link swiper__menu__link';
 $image__customlink__class = 'swiper__link swiper__custom__link';
-if($image__link__class) {
+if ($image__link__class) :
 	$image__menulink__class .= ' ' . $image__link__class;
 	$image__customlink__class .= ' ' . $image__link__class;
-}
+endif;
 
 // copyright class
 $image__copyright__class = 'swiper__image__copyright';
@@ -54,31 +54,36 @@ $image__copyright__class = 'swiper__image__copyright';
 // components //
 ///////////////
 $navigation__next__class = ' class="swiper-button-next';
-if($params['navigation_type']) {
+if ($params['navigation_type']) :
 	$navigation__next__class .= ' swiper-custom-controls sw__nav__custom';
-}
+endif;
 $navigation__next__class .= '"';
 $navigation__next__id = ' id="sw__nav__nextID__' . $ID . '"';
 
 $navigation__prev__class = ' class="swiper-button-prev';
-if($params['navigation_type']) {
+if ($params['navigation_type']) :
 	$navigation__prev__class .= ' swiper-custom-controls sw__nav__custom';
-}
+endif;
 $navigation__prev__class .= '"';
 $navigation__prev__id = ' id="sw__nav__prevID__' . $ID . '"';
 
 $navigation__next__icon = '';
 $navigation__prev__icon = '';
 
-if($params['navigation_type'] != '0') {
-	if($params['navigation_type'] == '1' || $params['navigation_type'] == '3') {
-		$navigation__next__icon = '<i class="' . $params['navigation_type_icon_next'] . '"></i>';
-		$navigation__prev__icon = '<i class="' . $params['navigation_type_icon_prev'] . '"></i>';
-	} elseif($params['navigation_type'] == '2') {
+if ($params['navigation_type'] != '0') :
+	if ($params['navigation_type'] == '1' || $params['navigation_type'] == '3') :
+		if ($params['navigation_bootstrap_svg']) :
+			$navigation__next__icon = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/></svg>';
+			$navigation__prev__icon = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/></svg>';
+		else :
+			$navigation__next__icon = '<i class="' . $params['navigation_type_icon_next'] . '"></i>';
+			$navigation__prev__icon = '<i class="' . $params['navigation_type_icon_prev'] . '"></i>';
+		endif;
+	elseif ($params['navigation_type'] == '2') :
 		$navigation__next__icon = '<i class="material-icons">' . $params['navigation_type_icon_next'] . '</i>';
 		$navigation__prev__icon = '<i class="material-icons">' . $params['navigation_type_icon_prev'] . '</i>';
-	}
-}
+	endif;
+endif;
 
 $navigation__next__output = '<div' . $navigation__next__class . $navigation__next__id . '>' . $navigation__next__icon . '</div>';
 $navigation__prev__output = '<div' . $navigation__prev__class . $navigation__prev__id . '>' . $navigation__prev__icon . '</div>';
@@ -104,53 +109,53 @@ $images__folder     = Folder::files('images/' . $params['imagelist']);
 $folderpath         = 'images/' . $params['imagelist'] . '/';
 
 
-if($params['typeselect'] == '3') {
+if ($params['typeselect'] == '3') :
 	$mod__class .= ' swiper-parallax';
-}
+endif;
 
 
-if($params['thumbs']) {
+if ($params['thumbs']) :
 	$mod__class .= ' swiper-has-thumbs';
-}
+endif;
 
 
 # lazyLoad
 $lazyLoadClass 					= '';
 $lazyLoadIcon 					= '';
-if($params['lazyload']) {
+if ($params['lazyload']) :
 	$mod__class .= ' swiper-lazy-load';
-	if($params['lazyload_theme'] == 1) {
+	if ($params['lazyload_theme'] == 1) :
 		$lazyLoadIcon = '<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>';
-	} else {
+	else :
 		$lazyLoadIcon = '<div class="swiper-lazy-preloader"></div>';
-	}
-}
+	endif;
+endif;
 
 
 # overlay
 $overlay 				= '';
 $overlay__var 			= '';
-if($params['overlay']) {
+if ($params['overlay']) :
 	$overlay .= ' swiper-overlay';
 	$overlay__var .= '--swiper-overlay-color:' . $params['overlaycolor'] . ';';
-}
+endif;
 
 
 # fullscreen
 $fullscreen 			= '';
-if($params['fullscreen']) {
+if ($params['fullscreen']) :
 	$fullscreen = ' swiper-fullscreen';
-}
+endif;
 
 
-if($params['loadFiles'] != 'hide') {
-	$document->addScript(Uri::base() . 'media/mod_swiper_slider/js/swiper-bundle.min.js', array('version' => 'auto', 'relative' => true));
-	if($params['loadFiles'] == 'auto') {
-		$document->addStyleSheet(Uri::base() . 'media/mod_swiper_slider/css/swiper-bundle.min.css', array('version' => 'auto', 'relative' => true));
-	} elseif($params['loadFiles'] == 'vendor') {
-		$document->addStyleSheet(Uri::base() . 'media/mod_swiper_slider/css/swiper-vendor-bundle.min.css', array('version' => 'auto', 'relative' => true));
-	}
-	if(
+if ($params['loadFiles'] != 'hide') :
+	$document->addScript(Uri::root(true) . '/media/mod_swiper_slider/js/swiper-bundle.min.js', array('version' => 'auto', 'relative' => true));
+	if ($params['loadFiles'] == 'auto') :
+		$document->addStyleSheet(Uri::root(true) . '/media/mod_swiper_slider/css/swiper-bundle.min.css', array('version' => 'auto', 'relative' => true));
+	elseif ($params['loadFiles'] == 'vendor') :
+		$document->addStyleSheet(Uri::root(true) . '/media/mod_swiper_slider/css/swiper-vendor-bundle.min.css', array('version' => 'auto', 'relative' => true));
+	endif;
+	if (
 		$params['ratio'] != 'ratio__auto' ||
 		$params['pagination_type'] == 'custom' ||
 		$params['effect'] == 'cube' ||
@@ -161,19 +166,19 @@ if($params['loadFiles'] != 'hide') {
 		$params['navigation_type'] != '0' ||
 		$params['lazyload'] ||
 		$params['type__select'] == '3'
-	) {
-		$document->addStyleSheet(Uri::base() . 'media/mod_swiper_slider/css/swiper.custom.css', array('version' => 'auto', 'relative' => true));
-	}
-}
+	) :
+		$document->addStyleSheet(Uri::root(true) . '/media/mod_swiper_slider/css/swiper.custom.css', array('version' => 'auto', 'relative' => true));
+	endif;
+endif;
 
 
-if($params['effect'] == 'cube' || $params['effect'] == 'coverflow' || $params['effect'] == 'flip') {
+if ($params['effect'] == 'cube' || $params['effect'] == 'coverflow' || $params['effect'] == 'flip') :
 	$slider__type = 'special';
-} elseif($params['fullscreen'] == ' swiper-fullscreen') {
+elseif ($params['fullscreen'] == ' swiper-fullscreen') :
 	$slider__type = 'fullscreen';
-} else {
+else :
 	$slider__type = 'normal';
-}
+endif;
 
 
 // swiper body
@@ -200,42 +205,39 @@ $swiper__thumbs__container .= ' dir="' . $params['viewDirection'] . '"';
 // swiper wrapper class
 $swiper__wrapper__class = 'swiper-wrapper';
 
-
-
 ?>
-
 
 <div <?php echo $swiper__body; ?>>
 	<div <?php echo $swiper__container; ?>>
 		<?php require ModuleHelper::getLayoutPath('mod_swiper_slider', $slider__layout); ?>
 
-	<?php if($params['components_placement']) { ?>
+	<?php if ($params['components_placement']) : ?>
 		<?php // if the navigation placement is outside the siwper-container is closed at this point ?>
 		</div>
-	<?php } ?>
+	<?php endif; ?>
 
 		<?php // navigation ?>
-		<?php if($params['navigation']) { ?>
+		<?php if ($params['navigation']) : ?>
 			<?php echo $navigation__next__output . $navigation__prev__output; ?>
-		<?php } ?>
+		<?php endif; ?>
 
 		<?php // pagination ?>
-		<?php if($params['pagination'] || $params['pagination_dynamic'] && $params['scrollbar'] == '0') { ?>
+		<?php if ($params['pagination'] || $params['pagination_dynamic'] && $params['scrollbar'] == '0') : ?>
 			<?php echo $pagination__output; ?>
-		<?php } ?>
+		<?php endif; ?>
 
 		<?php // scrollbar ?>
-		<?php if($params['scrollbar'] && $params['pagination'] == '0' && $params['pagination_dynamic'] == '0') { ?>
+		<?php if ($params['scrollbar'] && $params['pagination'] == '0' && $params['pagination_dynamic'] == '0') : ?>
 			<?php echo $scrollbar__output; ?>
-		<?php } ?>
+		<?php endif; ?>
 
-	<?php if(!$params['components_placement']) { ?>
+	<?php if (!$params['components_placement']) : ?>
 		<?php // if the navigation placement is inside the siwper-container is closed at this point ?>
 		</div>
-	<?php } ?>
+	<?php endif; ?>
 </div>
 
 
-<?php if($params['thumbs']) { ?>
+<?php if ($params['thumbs']) : ?>
 	<?php require ModuleHelper::getLayoutPath('mod_swiper_slider', '_thumbs'); ?>
-<?php } ?>
+<?php endif; ?>

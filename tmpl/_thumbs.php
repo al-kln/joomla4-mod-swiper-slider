@@ -16,11 +16,9 @@ $swiper__wrapper__class .= ' swiper__wrapper__thumbs';
 <div class="swiper__thumbs">
     <div <?php echo $swiper__thumbs__container; ?>>
         <div class="<?php echo $swiper__wrapper__class; ?>">
-
-            <?php if ($slider__layout == '_images') { ?>
-
+            <?php if ($slider__layout == '_images') : ?>
                 <?php
-                foreach($params['images'] as $index => $value) {
+                foreach ($params['images'] as $index => $value) :
                 
                     $image 					= $value->image;
                     $image__alt 			= $value->image_alt;
@@ -29,18 +27,14 @@ $swiper__wrapper__class .= ' swiper__wrapper__thumbs';
                     <div class="swiper-slide thumbs-swiper-slide">	
                         <img class="d-block w-100" src="<?php echo Uri::root() . $image; ?>" alt="<?php echo $image__alt; ?>">
                     </div>
-                <?php } ?>
-
-            <?php } elseif ($slider__layout == '_folder' ) { ?>
-
+                <?php endforeach; ?>
+            <?php elseif ($slider__layout == '_folder' ) : ?>
                 <?php foreach ($images_folder as $image_single) : ?>
                     <div class="swiper-slide thumbs-swiper-slide">
                         <img class="w-100" src="<?php echo $folderpath . $image_single; ?>">
                     </div>
                 <?php endforeach; ?>	
-
-            <?php } ?>
-        
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -48,33 +42,33 @@ $swiper__wrapper__class .= ' swiper__wrapper__thumbs';
 <script>
 
     const thumbsSwiper<?php echo $scriptID; ?> = new Swiper ('#thumbs__<?php echo $swiper__id; ?>', {
-        <?php if($params['slideThumbActiveClass'] != 'swiper-slide-thumb-active') { ?>
+        <?php if ($params['slideThumbActiveClass'] != 'swiper-slide-thumb-active') : ?>
             slideThumbActiveClass: '<?php echo $params['slideThumbActiveClass']; ?>',
-        <?php } ?>
-        <?php if($params['thumbsContainerClass'] != 'swiper-container-thumbs') { ?>
+        <?php endif; ?>
+        <?php if ($params['thumbsContainerClass'] != 'swiper-container-thumbs') : ?>
             thumbsContainerClass: '<?php echo $params['thumbsContainerClass']; ?>',
-        <?php } ?>
-        <?php if($params['thumbs_spaceBetween'] != null) { ?>
+        <?php endif; ?>
+        <?php if ($params['thumbs_spaceBetween'] != null) : ?>
             spaceBetween: <?php echo $params['thumbs_spaceBetween']; ?>,
-        <?php } ?>
-        <?php if($params['thumbs_slidesPerView'] != '1') { ?>
-            slidesPerView: <?php if($params['thumbs_slidesPerView'] != 'auto') { echo $params['thumbs_slidesPerView']; } else { echo "'auto'"; } ?>,
-        <?php } ?>
-        <?php if($params['thumbs_loop']) { ?>
+        <?php endif; ?>
+        <?php if ($params['thumbs_slidesPerView'] != '1') : ?>
+            slidesPerView: <?php echo $params['thumbs_slidesPerView'] != 'auto' ? $params['thumbs_slidesPerView'] : "'auto'"; ?>,
+        <?php endif; ?>
+        <?php if ($params['thumbs_loop']) : ?>
             loop: true,
-        <?php } ?>
-        <?php if($params['thumbs_freeMode']) { ?>
+        <?php endif; ?>
+        <?php if ($params['thumbs_freeMode']) : ?>
             freeMode: true,
-        <?php } ?>
-        <?php if($params['thumbs_loopedSlides'] != 'null') { ?>
+        <?php endif; ?>
+        <?php if ($params['thumbs_loopedSlides'] != 'null') : ?>
             loopedSlides: <?php echo $params['thumbs_loopedSlides']; ?>,
-        <?php } ?>
-        <?php if($params['thumbs_centeredSlides']) { ?>
+        <?php endif; ?>
+        <?php if ($params['thumbs_centeredSlides']) : ?>
             centeredSlides: true,
-        <?php } ?>
-        <?php if($params['thumbs_slideToClickedSlide']) { ?>
+        <?php endif; ?>
+        <?php if ($params['thumbs_slideToClickedSlide']) : ?>
             slideToClickedSlide: true,
-        <?php } ?>
+        <?php endif; ?>
         watchOverflow: true,
     })
 
