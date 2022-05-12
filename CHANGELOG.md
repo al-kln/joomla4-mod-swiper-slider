@@ -1,5 +1,9 @@
 # Changelog
 
+## SwiperSlider 3.3
+- update | core to 8.1.4
+- add | breakpoint autoHeight
+
 ## SwiperSlider 3.2
 - update | core to 8.1.3
 - update | relative path for core files

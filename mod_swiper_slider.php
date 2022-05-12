@@ -342,17 +342,17 @@ require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 
 					foreach ($viewportValues as $index => $viewportBreakpoints) :
 						$viewportAttribute = $viewportBreakpoints->viewportAttribute;
 						$breaktpointDirection = $viewportBreakpoints->breaktpointDirection;
-						if ($viewportBreakpoints->breaktpointLoop) :
-							$breaktpointLoop = 'true';
+						if ($viewportBreakpoints->viewportBoolean) :
+							$viewportBoolean = 'true';
 						else :
-							$breaktpointLoop = 'false';	
+							$viewportBoolean = 'false';	
 						endif;
 						$viewportValue = $viewportBreakpoints->viewportValue;
 						$breakpointInsert .= $viewportAttribute . ': ';
 						if ($viewportAttribute == 'direction') :
 							$breakpointInsert .= '"' . $breaktpointDirection . '",';
-						elseif ($viewportAttribute == 'loop') :
-							$breakpointInsert .= $breaktpointLoop . ',';
+						elseif ($viewportAttribute == 'loop' || $viewportAttribute == 'autoHeight') :
+							$breakpointInsert .= $viewportBoolean . ',';
 						else :
 							$breakpointInsert .= $viewportValue . ',';
 						endif;

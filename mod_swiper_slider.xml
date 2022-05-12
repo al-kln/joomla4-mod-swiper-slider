@@ -1247,6 +1247,7 @@
 										<option value="spaceBetween">MOD_SWIPER_SLIDER_VIEWPORT_ATTRIBUTE_SB</option>
 										<option value="slidesPerColumn">MOD_SWIPER_SLIDER_VIEWPORT_ATTRIBUTE_SPC</option>
 										<option value="loop">MOD_SWIPER_SLIDER_VIEWPORT_ATTRIBUTE_LOOP</option>
+										<option value="autoHeight">MOD_SWIPER_SLIDER_VIEWPORT_ATTRIBUTE_AUTOHEIGHT</option>
 								</field>
 
 
@@ -1270,12 +1271,12 @@
 
 
 								<field
-									name="breaktpointLoop"
+									name="viewportBoolean"
 									type="radio"
 									layout="joomla.form.field.radio.switcher"
 									default="0"
-									label="MOD_SWIPER_SLIDER_BREAKPOINT_LOOP"
-									description="MOD_SWIPER_SLIDER_BREAKPOINT_LOOP_DESC">
+									label="MOD_SWIPER_SLIDER_VIEWPORT_BOOLEAN"
+									description="MOD_SWIPER_SLIDER_VIEWPORT_BOOLEAN_DESC">
 										<option value="1">JYES</option>
 										<option value="0">JNO</option>
 								</field>
