@@ -1,5 +1,8 @@
 # Changelog
 
+## SwiperSlider 3.5
+- remove | fancy.select from menuitems
+
 ## SwiperSlider 3.4
 - add | custom link label
 - update | captions and translations
