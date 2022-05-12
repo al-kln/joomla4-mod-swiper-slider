@@ -30,8 +30,9 @@ $swiper__wrapper__class .= ' swiper__type__images';
         $image__nolink 			    = $value->image_nolink;
         $image__link__href 		    = Route::_('&Itemid=' . $value->image_link);
         $image__customlink__href    = $value->image_customlink;
+        $image__customlabel         = $value->image_customlabel;
         $slide__autoplay			= $value->slide_autoplay;
-
+        $image__link__caption       = $image__customlabel ? $image__customlabel : $image__link__caption;
 
         // swiper slide class
         $swiper__slide__class = 'swiper-slide';

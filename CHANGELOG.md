@@ -1,5 +1,9 @@
 # Changelog
 
+## SwiperSlider 3.4
+- add | custom link label
+- update | captions and translations
+
 ## SwiperSlider 3.3
 - update | core to 8.1.4
 - add | breakpoint autoHeight

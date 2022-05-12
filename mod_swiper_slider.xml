@@ -6,7 +6,7 @@
 	<copyright>Copyright (C) 2022 Alexander Klein</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>alexander.klein@fact-werbeagentur.de</authorEmail>
-	<version>3.2</version>
+	<version>3.4</version>
 	<description>MOD_SWIPER_SLIDER_DESC</description>
 	<namespace path="src">Joomla\Module\Swiper</namespace>
 	<files>
@@ -1537,7 +1537,6 @@
 							type="media"
 							directory=""
 							label="MOD_SWIPER_SLIDER_IMAGE"
-							description="MOD_SWIPER_SLIDER_IMAGE_DESC"
 						/>
 
 
@@ -1555,7 +1554,6 @@
 							type="text"
 							default=""
 							label="MOD_SWIPER_SLIDER_IMAGE_ALT"
-							description="MOD_SWIPER_SLIDER_IMAGE_ALT_DESC"
 						/>
 						
 						<field
@@ -1574,7 +1572,6 @@
 							filter="safehtml"
 							showon="imagesSlimMode:0"
 							label="MOD_SWIPER_SLIDER_IMAGE_HEADER"
-							description="MOD_SWIPER_SLIDER_IMAGE_HEADER_DESC"
 						/>
 						
 						<field
@@ -1583,7 +1580,6 @@
 							default=""
 							showon="imagesSlimMode:0"
 							label="MOD_SWIPER_SLIDER_IMAGE_CAPTION"
-							description="MOD_SWIPER_SLIDER_IMAGE_CAPTION_DESC"
 							filter="raw"
 						/>
 						
@@ -1593,8 +1589,7 @@
 							layout="joomla.form.field.radio.switcher"
 							default="1"
 							showon="imagesSlimMode:0"
-							label="MOD_SWIPER_SLIDER_NOLINK"
-							description="MOD_SWIPER_SLIDER_NOLINK_DESC">
+							label="MOD_SWIPER_SLIDER_NOLINK">
 								<option value="0">JNO</option>
 								<option value="1">JYES</option>
 						</field>
@@ -1602,10 +1597,10 @@
 						<field
 							name="image_link"
 							type="menuitem"
+							layout="joomla.form.field.list-fancy-select"
 							default=""
 							showon="imagesSlimMode:0[AND]image_nolink:0"
 							label="MOD_SWIPER_SLIDER_IMAGE_LINK"
-							description="MOD_SWIPER_SLIDER_IMAGE_LINK_DESC"
 						/>
 						
 						<field
@@ -1617,6 +1612,13 @@
 							description="MOD_SWIPER_SLIDER_IMAGE_CUSTOM_LINK_DESC"
 						/>
 
+						<field
+							name="image_customlabel"
+							type="text"
+							default=""
+							showon="imagesSlimMode:0[AND]image_nolink:0"
+							label="MOD_SWIPER_SLIDER_IMAGE_CUSTOM_LABEL"
+						/>
 
 						<field
 							name="slide_autoplay"
@@ -1773,6 +1775,7 @@
 									name="nested_image_link"
 									showon="nested_image_nolink:0"
 									type="menuitem"
+									layout="joomla.form.field.list-fancy-select"
 									default=""
 									label="MOD_SWIPER_SLIDER_IMAGE_LINK"
 									description="MOD_SWIPER_SLIDER_IMAGE_LINK_DESC"

@@ -50,7 +50,8 @@ $swiper__wrapper__class .= ' swiper__type__nested';
                     $image__cap 			    = $value->nested_image_cap;
                     $image__nolink 			    = $value->nested_image_nolink;
                     $image__link__href 		    = Route::_('&Itemid=' . $value->nested_image_link);
-                    $image__customlink__href    = $value->nested_image_customlink;
+                    $image__customlabel         = $value->image_customlabel;
+                    $image__link__caption       = $image__customlabel ? $image__customlabel : $image__link__caption;
 
 
                     // swiper slide class
