@@ -10,7 +10,7 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Uri\Uri;
 
-$swiper__wrapper__class .= ' swiper__type__parallax';
+$swiper__wrapper__class .= ' swiperTypeParallax swiper__type__parallax';
 
 // parallax element
 $parallax__class = 'class="parallax-bg"';

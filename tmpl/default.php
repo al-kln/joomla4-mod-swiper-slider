@@ -24,46 +24,40 @@ $image__link__class		= $params['linkbtnclass'];
 
 
 // caption class
-$caption__class = 'swiper__caption';
-if ($caption__custom__class) :
-	$caption__class .= ' ' . $caption__custom__class;
-endif;
+$caption__class = 'swiperCaption swiper__caption';
+$caption__class .= $caption__custom__class ? ' ' . $caption__custom__class : '';
 
 // caption inner class
-$caption__inner__class = 'swiper__inner__caption';
+$caption__inner__class = 'captionInner swiper__inner__caption';
 
 // image plus class
-$image__plus__class = 'slide__image__plus';
+$image__plus__class = 'additionalMedia slide__image__plus';
 
 // image heading
-$heading__class = 'slide__heading';
+$heading__class = 'heading slide__heading';
 
 // image links
-$image__menulink__class = 'swiper__link swiper__menu__link';
-$image__customlink__class = 'swiper__link swiper__custom__link';
-if ($image__link__class) :
-	$image__menulink__class .= ' ' . $image__link__class;
-	$image__customlink__class .= ' ' . $image__link__class;
-endif;
+$image__menulink__class = 'swiperLink swiper__link swiper__menu__link';
+$image__customlink__class = 'swiperLink swiper__link swiper__custom__link';
+$image__menulink__class .= $image__link__class ? ' ' . $image__link__class : '';
+$image__customlink__class .= $image__link__class ? ' ' . $image__link__class : '';
 
 // copyright class
-$image__copyright__class = 'swiper__image__copyright';
+$image__copyright__class = 'mediaCopyright swiper__image__copyright';
 
 
 /////////////////
 // components //
 ///////////////
-$navigation__next__class = ' class="swiper-button-next';
-if ($params['navigation_type']) :
-	$navigation__next__class .= ' swiper-custom-controls sw__nav__custom';
-endif;
+$navigation__next__class = ' class="swBtnNext swiper-button-next';
+$navigation__next__class .= $params['navigation_type'] ? ' swCustomControls swiper-custom-controls sw__nav__custom' : '';
+
 $navigation__next__class .= '"';
 $navigation__next__id = ' id="sw__nav__nextID__' . $ID . '"';
 
-$navigation__prev__class = ' class="swiper-button-prev';
-if ($params['navigation_type']) :
-	$navigation__prev__class .= ' swiper-custom-controls sw__nav__custom';
-endif;
+$navigation__prev__class = ' class="swBtnPrev swiper-button-prev';
+$navigation__prev__class .= $params['navigation_type'] ? ' swCustomControls swiper-custom-controls sw__nav__custom' : '';
+
 $navigation__prev__class .= '"';
 $navigation__prev__id = ' id="sw__nav__prevID__' . $ID . '"';
 
@@ -89,14 +83,14 @@ $navigation__next__output = '<div' . $navigation__next__class . $navigation__nex
 $navigation__prev__output = '<div' . $navigation__prev__class . $navigation__prev__id . '>' . $navigation__prev__icon . '</div>';
 
 // pagination
-$pagination__class = ' class="swiper-pagination"';
+$pagination__class = ' class="swiperPagi swiper-pagination"';
 $pagination__id = ' id="sw__pagiID__' . $ID . '"';		
 
 $pagination__output = '<div' . $pagination__class . $pagination__id . '></div>';
 
 
 // scrollbar
-$scrollbar__class = ' class="swiper-scrollbar"';
+$scrollbar__class = ' class="swiperScrollbar swiper-scrollbar"';
 $scrollbar__id = ' id="sw__scrollID__' . $ID . '"';		
 
 $scrollbar__output = '<div' . $scrollbar__class . $scrollbar__id . '></div>';
@@ -108,15 +102,8 @@ $scrollbar__output = '<div' . $scrollbar__class . $scrollbar__id . '></div>';
 $images__folder     = Folder::files('images/' . $params['imagelist']);
 $folderpath         = 'images/' . $params['imagelist'] . '/';
 
-
-if ($params['typeselect'] == '3') :
-	$mod__class .= ' swiper-parallax';
-endif;
-
-
-if ($params['thumbs']) :
-	$mod__class .= ' swiper-has-thumbs';
-endif;
+$mod__class .= $params['typeselect'] == '3' ? ' swiperParallax swiper-parallax' : '';
+$mod__class .= $params['thumbs'] ? ' swiperHasThumbs swiper-has-thumbs' : '';
 
 
 # lazyLoad
@@ -133,19 +120,12 @@ endif;
 
 
 # overlay
-$overlay 				= '';
-$overlay__var 			= '';
-if ($params['overlay']) :
-	$overlay .= ' swiper-overlay';
-	$overlay__var .= '--swiper-overlay-color:' . $params['overlaycolor'] . ';';
-endif;
+$overlay 				= $params['overlay'] ? ' swiperOverlay swiper-overlay' : '';
+$overlay__var 			= $params['overlay'] ? '--swiper-overlay-color:' . $params['overlaycolor'] . ';' : '';
 
 
 # fullscreen
-$fullscreen 			= '';
-if ($params['fullscreen']) :
-	$fullscreen = ' swiper-fullscreen';
-endif;
+$fullscreen 			= $params['fullscreen'] ? ' swiperFullscreen swiper-fullscreen' : '';
 
 
 if ($params['loadFiles'] != 'hide') :

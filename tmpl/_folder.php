@@ -9,7 +9,7 @@
 defined('_JEXEC') or die;
 
 $files__array = array();
-$swiper__wrapper__class .= ' swiper__type__folder';
+$swiper__wrapper__class .= ' swiperTypeFolder swiper__type__folder';
 ?>
 
 <div class="<?php echo $swiper__wrapper__class; ?>">

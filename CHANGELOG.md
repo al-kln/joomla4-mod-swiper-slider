@@ -1,5 +1,11 @@
 # Changelog
 
+## SwiperSlider 3.6
+- update | core to 8.3.2
+- update | some classes
+- update | remove & shorten some php if else
+- update | new caption structure
+
 ## SwiperSlider 3.5
 - remove | fancy.select from menuitems
 

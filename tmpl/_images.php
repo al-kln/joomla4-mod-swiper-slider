@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Router\Route;
 
-$swiper__wrapper__class .= ' swiper__type__images';
+$swiper__wrapper__class .= ' swiperTypeImages swiper__type__images';
 ?>
 
 <div class="<?php echo $swiper__wrapper__class; ?>">
@@ -111,32 +111,33 @@ $swiper__wrapper__class .= ' swiper__type__images';
                 <?php if ($image__header || $image__plus || $image__cap || !$image__nolink) : ?>
                     <?php // caption begin ?>
                     <div class="<?php echo $caption__class; ?>">
-
-                        <?php // image plus ?>
-                       <?php if ($image__plus) : ?>
-                           <img class="<?php echo $image__plus__class; ?>" src="<?php echo Uri::root() . $image__plus; ?>" alt="<?php echo $image__alt; ?>">
-                       <?php endif; ?>
-                       <?php // caption inner ?>
-                       <?php if ($image__header || $image__cap) : ?>
-                           <div class="<?php echo $caption__inner__class; ?>">
-                               <?php // caption heading ?>
-                               <?php if ($image__header) : ?>
-                                   <<?php echo $heading__tag; ?> class="<?php echo $heading__class; ?>"><?php echo $image__header; ?></<?php echo $heading__tag; ?>>
-                               <?php endif; ?>
-                               <?php // caption text ?>
-                               <?php if ($image__cap) : ?>
-                                   <p><?php echo $image__cap; ?></p>
-                               <?php endif; ?>
-                           </div>
-                       <?php endif; ?>
-                       <?php // caption link ?>
-                       <?php if (!$image__nolink) : ?>
-                            <?php if ($image__customlink__href) : ?>
-                                <a class="<?php echo $image__customlink__class; ?>" href="<?php echo $image__customlink; ?>"><?php echo $image__link__caption; ?></a>
-                           <?php else : ?>
-                                <a class="<?php echo $image__menulink__class; ?>" href="<?php echo $image__link__href; ?>"><?php echo $image__link__caption; ?></a>
-                           <?php endif; ?>
-                        <?php endif; ?>
+                        <div class="swiperCaptionWrapper">
+                            <?php // image plus ?>
+                            <?php if ($image__plus) : ?>
+                            <img class="<?php echo $image__plus__class; ?>" src="<?php echo Uri::root() . $image__plus; ?>" alt="<?php echo $image__alt; ?>">
+                            <?php endif; ?>
+                            <?php // caption inner ?>
+                            <?php if ($image__header || $image__cap) : ?>
+                                <div class="<?php echo $caption__inner__class; ?>">
+                                    <?php // caption heading ?>
+                                    <?php if ($image__header) : ?>
+                                    <<?php echo $heading__tag; ?> class="<?php echo $heading__class; ?>"><?php echo $image__header; ?></<?php echo $heading__tag; ?>>
+                                    <?php endif; ?>
+                                    <?php // caption text ?>
+                                    <?php if ($image__cap) : ?>
+                                        <p><?php echo $image__cap; ?></p>
+                                    <?php endif; ?>
+                            </div>
+                            <?php endif; ?>
+                            <?php // caption link ?>
+                            <?php if (!$image__nolink) : ?>
+                                <?php if ($image__customlink__href) : ?>
+                                    <a class="<?php echo $image__customlink__class; ?>" href="<?php echo $image__customlink; ?>"><?php echo $image__link__caption; ?></a>
+                                <?php else : ?>
+                                    <a class="<?php echo $image__menulink__class; ?>" href="<?php echo $image__link__href; ?>"><?php echo $image__link__caption; ?></a>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        </div>
                    </div>
                 <?php endif; ?>
                 <?php // copyright ?>   

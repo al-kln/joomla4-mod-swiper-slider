@@ -6,7 +6,7 @@
 	<copyright>Copyright (C) 2022 Alexander Klein</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>alexander.klein@fact-werbeagentur.de</authorEmail>
-	<version>3.5</version>
+	<version>3.6</version>
 	<description>MOD_SWIPER_SLIDER_DESC</description>
 	<namespace path="src">Joomla\Module\Swiper</namespace>
 	<files>
@@ -46,7 +46,7 @@
 				<field
 					name="captionclass"
 					type="text"
-					default="carousel-caption"
+					default="caption"
 					label="MOD_SWIPER_SLIDER_CAPTION_CLASS"
 					description="MOD_SWIPER_SLIDER_CAPTION_CLASS_DESC"
 				/>
@@ -56,7 +56,7 @@
 					name="heading_tag"
 					type="list"
 					layout="joomla.form.field.list-fancy-select"
-					default="h3"
+					default="h1"
 					label="MOD_SWIPER_SLIDER_HEADING_TAG"
 					description="MOD_SWIPER_SLIDER_HEADING_TAG_DESC">
 						<option value="h1">h1</option>
@@ -71,7 +71,7 @@
 				<field
 					name="linkbtntxt"
 					type="text"
-					default="mehr erfahren..."
+					default="mehr erfahren"
 					label="MOD_SWIPER_SLIDER_LINKBTN_TXT"
 					description="MOD_SWIPER_SLIDER_LINKBTN_TXT_DESC"
 				/>
@@ -80,7 +80,7 @@
 				<field
 					name="linkbtnclass"
 					type="text"
-					default=""
+					default="btn btn-primary"
 					label="MOD_SWIPER_SLIDER_LINKBTN_CLASS"
 					description="MOD_SWIPER_SLIDER_LINKBTN_CLASS_DESC"
 				/>
@@ -211,10 +211,10 @@
 				<field
 					name="speed"
 					type="number"
-					default="300"
+					default="675"
 					min="0"
 					max="10000"
-					step="50"
+					step="1"
 					label="MOD_SWIPER_SLIDER_SPEED"
 					description="MOD_SWIPER_SLIDER_SPEED_DESC"
 				/>
@@ -1323,7 +1323,7 @@
 				<field
 					name="containerModifierClass"
 					type="text"
-					default="swiper-container-"
+					default="swiper-"
 					label="MOD_SWIPER_SLIDER_CONTAINER_MODIFIER_CLASS"
 					description="MOD_SWIPER_SLIDER_CONTAINER_MODIFIER_CLASS_DESC"
 				/>
