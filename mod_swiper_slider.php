@@ -22,7 +22,7 @@ $database 				= Factory::getDBO();
 $document 				= Factory::getDocument();
 
 $modSFX = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
-$modClass .= $modSFX ? ' ' . $modSFX : '';
+$modClass = $modSFX ? ' ' . $modSFX : '';
 
 if (!function_exists('sanitizeFileName')) :
 	function sanitizeFileName($fileName) {

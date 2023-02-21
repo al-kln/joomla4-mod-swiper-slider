@@ -1,5 +1,11 @@
 # Changelog
 
+## SwiperSlider 3.7.2
+ - fix | set modClass
+
+## SwiperSlider 3.7.1
+ - update | media thumb
+ 
 ## SwiperSlider 3.7
 - update | core to 9.0.5
 - add | 'swiper-no-swiping' to the link
