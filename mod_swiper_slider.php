@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  mod_swiper_slider
  *
- * @copyright   Copyright (C) 2005 - 2022 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2023 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -21,11 +21,8 @@ $scriptID				= rand(100, 1000);
 $database 				= Factory::getDBO();
 $document 				= Factory::getDocument();
 
-$mod__class = ' ';
 $modSFX = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
-if ($modSFX) {
-    $mod__class .= ' ' . $modSFX;
-}
+$modClass .= $modSFX ? ' ' . $modSFX : '';
 
 if (!function_exists('sanitizeFileName')) :
 	function sanitizeFileName($fileName) {

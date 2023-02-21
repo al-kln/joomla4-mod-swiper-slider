@@ -1,5 +1,10 @@
 # Changelog
 
+## SwiperSlider 3.7
+- update | core to 9.0.5
+- add | 'swiper-no-swiping' to the link
+- add | 'modSwiper' class
+
 ## SwiperSlider 3.6
 - update | core to 8.3.2
 - update | some classes

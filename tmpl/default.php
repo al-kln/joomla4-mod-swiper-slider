@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  mod_swiper_slider
  *
- * @copyright   Copyright (C) 2005 - 2022 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2023 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('_JEXEC') or die;
@@ -102,15 +102,15 @@ $scrollbar__output = '<div' . $scrollbar__class . $scrollbar__id . '></div>';
 $images__folder     = Folder::files('images/' . $params['imagelist']);
 $folderpath         = 'images/' . $params['imagelist'] . '/';
 
-$mod__class .= $params['typeselect'] == '3' ? ' swiperParallax swiper-parallax' : '';
-$mod__class .= $params['thumbs'] ? ' swiperHasThumbs swiper-has-thumbs' : '';
+$modClass .= $params['typeselect'] == '3' ? ' swiperParallax swiper-parallax' : '';
+$modClass .= $params['thumbs'] ? ' swiperHasThumbs swiper-has-thumbs' : '';
 
 
 # lazyLoad
 $lazyLoadClass 					= '';
 $lazyLoadIcon 					= '';
 if ($params['lazyload']) :
-	$mod__class .= ' swiper-lazy-load';
+	$modClass .= ' swiper-lazy-load';
 	if ($params['lazyload_theme'] == 1) :
 		$lazyLoadIcon = '<div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>';
 	else :
@@ -163,8 +163,8 @@ endif;
 
 // swiper body
 $swiper__body = '';
-$swiper__body .= 'class="swiper__body"';
-$swiper__body .= ' id="swiper__elementID__' . $ID. '"';
+$swiper__body .= 'class="modSwiper swiperBody"';
+$swiper__body .= ' id="swiperElementID__' . $ID. '"';
 $swiper__body .= ' style="--swiper-theme-color:' . $params['themeColor'] . ';';
 $swiper__body .= $overlay__var;
 $swiper__body .= '"';
@@ -172,13 +172,13 @@ $swiper__body .= '"';
 
 // swiper container
 $swiper__container = '';
-$swiper__container .= 'class="swiper swiper-container' . $overlay . $fullscreen . $mod__class . '"';
+$swiper__container .= 'class="swiper swiper-container' . $overlay . $fullscreen . $modClass . '"';
 $swiper__container .= ' id="' . $swiper__id . '"';
 $swiper__container .= ' dir="' . $params['viewDirection'] . '"';
 
 // swiper thumbs container
 $swiper__thumbs__container = '';
-$swiper__thumbs__container .= 'class="swiper swiper-container thumbs-swiper-container' . $overlay . $fullscreen . $mod__class . '"';
+$swiper__thumbs__container .= 'class="swiper swiper-container thumbs-swiper-container' . $overlay . $fullscreen . $modClass . '"';
 $swiper__thumbs__container .= ' id="thumbs__' . $swiper__id . '"';
 $swiper__thumbs__container .= ' dir="' . $params['viewDirection'] . '"';
 
@@ -216,7 +216,6 @@ $swiper__wrapper__class = 'swiper-wrapper';
 		</div>
 	<?php endif; ?>
 </div>
-
 
 <?php if ($params['thumbs']) : ?>
 	<?php require ModuleHelper::getLayoutPath('mod_swiper_slider', '_thumbs'); ?>
