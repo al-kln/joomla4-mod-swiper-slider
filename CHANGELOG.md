@@ -1,5 +1,10 @@
 # Changelog
 
+## SwiperSlider 3.9.0
+- update | core to 10.0.5
+- **core:** swipe to last with slidesPerView: auto ([#7183](https://github.com/nolimits4web/Swiper/issues/7183)) ([2e3f47d](https://github.com/nolimits4web/Swiper/commit/2e3f47d5fcd37707be18180f35c9955c0bcc915e))
+- **modules/a11y:** filter out falsy pagination elems ([#7201](https://github.com/nolimits4web/Swiper/issues/7201)) ([a044626](https://github.com/nolimits4web/Swiper/commit/a0446261bdbd9d538e31c02d3248d3bec0328c55))
+
 ## SwiperSlider 3.8.0
  - update | core to 9.3.2
 - **core:** don't call update() on lazy loaded if spv !== auto and no autoHeight ([378a3c6](https://github.com/nolimits4web/Swiper/commit/378a3c627d8e3845c2949d2c4fff506905d8d9cd))
