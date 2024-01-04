@@ -49,7 +49,7 @@ $swiper__wrapper__class .= ' swiperTypeNested swiper__type__nested';
                     $image__header 			    = $value->nested_image_header;
                     $image__cap 			    = $value->nested_image_cap;
                     $image__nolink 			    = $value->nested_image_nolink;
-                    $image__link__href 		    = Route::_('&Itemid=' . $value->nested_image_link);
+                    $image__link__href 		    = Route::_('index.php?Itemid=' . $value->nested_image_link);
                     $image__customlabel         = $value->image_customlabel;
                     $image__link__caption       = $image__customlabel ? $image__customlabel : $image__link__caption;
 

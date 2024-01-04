@@ -1,5 +1,8 @@
 # Changelog
 
+## SwiperSlider 3.10.1
+- fix | link routing
+
 ## SwiperSlider 3.10.0
 - add | support for heroicons
 

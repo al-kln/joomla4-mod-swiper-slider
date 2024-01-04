@@ -28,7 +28,7 @@ $swiper__wrapper__class .= ' swiperTypeImages swiper__type__images';
         $image__header 			    = $value->image_header;
         $image__cap 			    = $value->image_cap;
         $image__nolink 			    = $value->image_nolink;
-        $image__link__href 		    = Route::_('&Itemid=' . $value->image_link);
+        $image__link__href 		    = Route::_('index.php?Itemid=' . $value->image_link);
         $image__customlink__href    = $value->image_customlink;
         $image__customlabel         = $value->image_customlabel;
         $slide__autoplay			= $value->slide_autoplay;
