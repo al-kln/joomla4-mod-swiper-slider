@@ -6,7 +6,7 @@
 	<copyright>Copyright (C) 2024 Alexander Klein</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>alexander.klein@fact-werbeagentur.de</authorEmail>
-	<version>3.9.2</version>
+	<version>3.10.0</version>
 	<description>MOD_SWIPER_SLIDER_DESC</description>
 	<namespace path="src">Joomla\Module\Swiper</namespace>
 	<files>
@@ -1998,7 +1998,7 @@
 					name="navigation_type_icon_prev"
 					type="text"
 					hint="bi bi-chevron-left"
-					showon="navigation:1[AND]navigation_type!:0"
+					showon="navigation:1[AND]navigation_type!:0[AND]navigation_type!:4"
 					label="MOD_SWIPER_SLIDER_NAVIGATION_TYPE_ICON_PREV"
 					description="MOD_SWIPER_SLIDER_NAVIGATION_TYPE_ICON_PREV_DESC"
 				/>
@@ -2008,7 +2008,7 @@
 					name="navigation_type_icon_next"
 					type="text"
 					hint="bi bi-chevron-right"
-					showon="navigation:1[AND]navigation_type!:0"
+					showon="navigation:1[AND]navigation_type!:0[AND]navigation_type!:4"
 					label="MOD_SWIPER_SLIDER_NAVIGATION_TYPE_ICON_NEXT"
 					description="MOD_SWIPER_SLIDER_NAVIGATION_TYPE_ICON_NEXT_DESC"
 				/>
