@@ -1,5 +1,9 @@
 # Changelog
 
+## SwiperSlider 3.9.1
+- update | core to 11.0.5
+- update | copyright
+
 ## SwiperSlider 3.9.0
 - update | core to 10.0.5
 - **core:** swipe to last with slidesPerView: auto ([#7183](https://github.com/nolimits4web/Swiper/issues/7183)) ([2e3f47d](https://github.com/nolimits4web/Swiper/commit/2e3f47d5fcd37707be18180f35c9955c0bcc915e))

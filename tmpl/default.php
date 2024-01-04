@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  mod_swiper_slider
  *
- * @copyright   Copyright (C) 2005 - 2023 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2024 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('_JEXEC') or die;
@@ -76,6 +76,9 @@ if ($params['navigation_type'] != '0') :
 	elseif ($params['navigation_type'] == '2') :
 		$navigation__next__icon = '<i class="material-icons">' . $params['navigation_type_icon_next'] . '</i>';
 		$navigation__prev__icon = '<i class="material-icons">' . $params['navigation_type_icon_prev'] . '</i>';
+	elseif ($params['navigation_type'] == '4') :
+		$navigation__next__icon = $params['navigation_heroicon_next'];
+		$navigation__prev__icon = $params['navigation_heroicon_prev'];
 	endif;
 endif;
 

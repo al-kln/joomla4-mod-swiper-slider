@@ -3,10 +3,10 @@
 	<name>MOD_SWIPER_SLIDER</name>
 	<author>Alexander Klein | Vladimir Kharlampidi</author>
 	<creationDate>Januar 2020</creationDate>
-	<copyright>Copyright (C) 2023 Alexander Klein</copyright>
+	<copyright>Copyright (C) 2024 Alexander Klein</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>alexander.klein@fact-werbeagentur.de</authorEmail>
-	<version>3.9.0</version>
+	<version>3.9.1</version>
 	<description>MOD_SWIPER_SLIDER_DESC</description>
 	<namespace path="src">Joomla\Module\Swiper</namespace>
 	<files>
@@ -1990,6 +1990,7 @@
 						<option value="1">MOD_SWIPER_SLIDER_NAVIGATION_TYPE_FONTAWESOME</option>
 						<option value="2">MOD_SWIPER_SLIDER_NAVIGATION_TYPE_MATERIAL</option>
 						<option value="3">MOD_SWIPER_SLIDER_NAVIGATION_TYPE_BOOTSTRAP</option>
+						<option value="4">MOD_SWIPER_SLIDER_NAVIGATION_TYPE_HEROICONS</option>
 				</field> 
 
 
@@ -2024,6 +2025,40 @@
 						<option value="0">JNO</option>
 						<option value="1">JYES</option>
 				</field>
+
+
+				<field
+					name="navigation_heroicons_svg"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					disabled="true"
+					showon="navigation:1[AND]navigation_type:4"
+					label="MOD_SWIPER_SLIDER_NAVIGATION_HEROICONS_SVG"
+					description="MOD_SWIPER_SLIDER_NAVIGATION_HEROICONS_SVG_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+
+
+				<field
+					name="navigation_heroicon_prev"
+					type="textarea"
+					default="<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' d='M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18' /></svg>"
+					showon="navigation:1[AND]navigation_type:4"
+					label="MOD_SWIPER_SLIDER_NAVIGATION_TYPE_ICON_PREV"
+					description="MOD_SWIPER_SLIDER_NAVIGATION_HEROICON_PREV_DESC"
+				/>
+
+
+				<field
+					name="navigation_heroicon_next"
+					type="textarea"
+					default="<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' d='M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3' /></svg>"
+					showon="navigation:1[AND]navigation_type:4"
+					label="MOD_SWIPER_SLIDER_NAVIGATION_TYPE_ICON_NEXT"
+					description="MOD_SWIPER_SLIDER_NAVIGATION_HEROICON_NEXT_DESC"
+				/>
 
 
 				<field
