@@ -1,5 +1,8 @@
 # Changelog
 
+## SwiperSlider 3.10.0
+- add | support for heroicons
+
 ## SwiperSlider 3.9.1
 - update | core to 11.0.5
 - update | copyright
