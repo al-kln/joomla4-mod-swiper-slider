@@ -1,5 +1,8 @@
 # Changelog
 
+## SwiperSlider 3.10.3
+- fix | hero icons raw
+
 ## SwiperSlider 3.10.2
 - fix | default values hero icons
 
