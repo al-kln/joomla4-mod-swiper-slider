@@ -1,5 +1,8 @@
 # Changelog
 
+## SwiperSlider 3.10.2
+- fix | default values hero icons
+
 ## SwiperSlider 3.10.1
 - fix | link routing
 

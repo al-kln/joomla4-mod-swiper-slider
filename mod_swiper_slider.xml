@@ -6,7 +6,7 @@
 	<copyright>Copyright (C) 2024 Alexander Klein</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>alexander.klein@fact-werbeagentur.de</authorEmail>
-	<version>3.10.1</version>
+	<version>3.10.2</version>
 	<description>MOD_SWIPER_SLIDER_DESC</description>
 	<namespace path="src">Joomla\Module\Swiper</namespace>
 	<files>
@@ -2044,7 +2044,7 @@
 				<field
 					name="navigation_heroicon_prev"
 					type="textarea"
-					default="&lt;svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'&gt;&lt;path stroke-linecap='round' stroke-linejoin='round' d='M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18' /&gt;&lt;/svg&gt;"
+					hint="&lt;svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'&gt;&lt;path stroke-linecap='round' stroke-linejoin='round' d='M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18' /&gt;&lt;/svg&gt;"
 					showon="navigation:1[AND]navigation_type:4"
 					label="MOD_SWIPER_SLIDER_NAVIGATION_TYPE_ICON_PREV"
 					description="MOD_SWIPER_SLIDER_NAVIGATION_HEROICON_PREV_DESC"
@@ -2054,7 +2054,7 @@
 				<field
 					name="navigation_heroicon_next"
 					type="textarea"
-					default="&lt;svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'&gt;&lt;path stroke-linecap='round' stroke-linejoin='round' d='M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3' /&gt;&lt;/svg&gt;"
+					hint="&lt;svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'&gt;&lt;path stroke-linecap='round' stroke-linejoin='round' d='M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3' /&gt;&lt;/svg&gt;"
 					showon="navigation:1[AND]navigation_type:4"
 					label="MOD_SWIPER_SLIDER_NAVIGATION_TYPE_ICON_NEXT"
 					description="MOD_SWIPER_SLIDER_NAVIGATION_HEROICON_NEXT_DESC"
