@@ -1,6 +1,9 @@
 # Changelog
 
-## SwiperSlider 3.11
+## SwiperSlider 3.11.1
+- fix | dragSize value
+
+## SwiperSlider 3.11.0
 - add | scrollbar options
 
 ## SwiperSlider 3.10.3

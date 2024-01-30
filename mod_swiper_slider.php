@@ -443,7 +443,7 @@ require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 
 			scrollbar: {
 				el: '#sw__scrollID__<?php echo $ID; ?>',
 				<?php if ($params['scrollbar_dragSize'] !== null) : ?>
-					dragSize: '<?php echo $params['scrollbar_dragSize']; ?>',
+					dragSize: <?php echo $params['scrollbar_dragSize']; ?>,
 				<?php endif; ?>
 				<?php if (!$params['scrollbar_draggable']) : ?>
 					draggable: true,
