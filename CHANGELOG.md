@@ -1,5 +1,8 @@
 # Changelog
 
+## SwiperSlider 3.11
+- add | scrollbar options
+
 ## SwiperSlider 3.10.3
 - fix | hero icons raw
 

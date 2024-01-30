@@ -21,8 +21,8 @@ $scriptID				= rand(100, 1000);
 $database 				= Factory::getDBO();
 $document 				= Factory::getDocument();
 
-$modSFX = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
-$modClass = $modSFX ? ' ' . $modSFX : '';
+$modSFX 				= htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
+$modClass 				= $modSFX ? ' ' . $modSFX : '';
 
 if (!function_exists('sanitizeFileName')) :
 	function sanitizeFileName($fileName) {
@@ -363,7 +363,7 @@ require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 
 		<?php if ($params['breakpoints'] != null) : ?>
 			breakpoints: {<?php echo $breakpointInsert; ?>},
 		<?php endif; ?>
-		<?php if ($params['containerModifierClass'] != 'swiper-container-') : ?>
+		<?php if ($params['containerModifierClass'] != 'swiper-') : ?>
 			containerModifierClass: '<?php echo $params['containerModifierClass']; ?>',
 		<?php endif; ?>
 		<?php if ($params['slideClass'] != 'swiper-slide') : ?>
@@ -442,7 +442,15 @@ require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 
 		<?php if ($params['scrollbar']) : ?>
 			scrollbar: {
 				el: '#sw__scrollID__<?php echo $ID; ?>',
-				hide: true,
+				<?php if ($params['scrollbar_dragSize'] !== null) : ?>
+					dragSize: '<?php echo $params['scrollbar_dragSize']; ?>',
+				<?php endif; ?>
+				<?php if (!$params['scrollbar_draggable']) : ?>
+					draggable: true,
+				<?php endif; ?>
+				<?php if (!$params['scrollbar_hide']) : ?>
+					hide: false,
+				<?php endif; ?>
 			},
 		<?php endif; ?>
 		<?php if ($params['autoplay']) : ?>
