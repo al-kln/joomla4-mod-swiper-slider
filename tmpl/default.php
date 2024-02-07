@@ -132,11 +132,11 @@ $fullscreen 			= $params['fullscreen'] ? ' swiperFullscreen swiper-fullscreen' :
 
 
 if ($params['loadFiles'] != 'hide') :
-	$document->addScript(Uri::root(true) . '/media/mod_swiper_slider/js/swiper-bundle.min.js', array('version' => 'auto', 'relative' => true));
+	$wa->registerAndUseScript('swiper-bundle.min.js', 'media/mod_swiper_slider/js/swiper-bundle.min.js');
 	if ($params['loadFiles'] == 'auto') :
-		$document->addStyleSheet(Uri::root(true) . '/media/mod_swiper_slider/css/swiper-bundle.min.css', array('version' => 'auto', 'relative' => true));
+		$wa->registerAndUseStyle('swiper-bundle.min.css', '/media/mod_swiper_slider/css/swiper-bundle.min.css');
 	elseif ($params['loadFiles'] == 'vendor') :
-		$document->addStyleSheet(Uri::root(true) . '/media/mod_swiper_slider/css/swiper-vendor-bundle.min.css', array('version' => 'auto', 'relative' => true));
+		$wa->registerAndUseStyle('swiper-vendor-bundle.min.css', '/media/mod_swiper_slider/css/swiper-vendor-bundle.min.css');
 	endif;
 	if (
 		$params['ratio'] != 'ratio__auto' ||
@@ -150,7 +150,7 @@ if ($params['loadFiles'] != 'hide') :
 		$params['lazyload'] ||
 		$params['type__select'] == '3'
 	) :
-		$document->addStyleSheet(Uri::root(true) . '/media/mod_swiper_slider/css/swiper.custom.css', array('version' => 'auto', 'relative' => true));
+	$wa->registerAndUseStyle('swiper.custom.css', '/media/mod_swiper_slider/css/swiper.custom.css');
 	endif;
 endif;
 

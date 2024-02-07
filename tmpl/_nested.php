@@ -50,6 +50,7 @@ $swiper__wrapper__class .= ' swiperTypeNested swiper__type__nested';
                     $image__cap 			    = $value->nested_image_cap;
                     $image__nolink 			    = $value->nested_image_nolink;
                     $image__link__href 		    = Route::_('index.php?Itemid=' . $value->nested_image_link);
+                    $image__customlink__href    = $value->image_customlink;
                     $image__customlabel         = $value->image_customlabel;
                     $image__link__caption       = $image__customlabel ? $image__customlabel : $image__link__caption;
 
@@ -149,7 +150,7 @@ $swiper__wrapper__class .= ' swiperTypeNested swiper__type__nested';
                                         <?php // caption link ?>
                                         <?php if (!$image__nolink) : ?>
                                                 <?php if ($image__customlink__href) : ?>
-                                                    <a class="<?php echo $image__customlink__class; ?>" href="<?php echo $image__customlink; ?>"><?php echo $image__link__caption; ?></a>
+                                                    <a class="<?php echo $image__customlink__class; ?>" href="<?php echo $image__customlink__href; ?>"><?php echo $image__link__caption; ?></a>
                                             <?php else : ?>
                                                     <a class="<?php echo $image__menulink__class; ?>" href="<?php echo $image__link__href; ?>"><?php echo $image__link__caption; ?></a>
                                             <?php endif; ?>

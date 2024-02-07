@@ -132,7 +132,7 @@ $swiper__wrapper__class .= ' swiperTypeImages swiper__type__images';
                             <?php // caption link ?>
                             <?php if (!$image__nolink) : ?>
                                 <?php if ($image__customlink__href) : ?>
-                                    <a class="<?php echo $image__customlink__class; ?>" href="<?php echo $image__customlink; ?>"><?php echo $image__link__caption; ?></a>
+                                    <a class="<?php echo $image__customlink__class; ?>" href="<?php echo $image__customlink__href; ?>"><?php echo $image__link__caption; ?></a>
                                 <?php else : ?>
                                     <a class="<?php echo $image__menulink__class; ?>" href="<?php echo $image__link__href; ?>"><?php echo $image__link__caption; ?></a>
                                 <?php endif; ?>

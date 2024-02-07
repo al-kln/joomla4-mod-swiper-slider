@@ -20,6 +20,7 @@ $ID						= $module->id;
 $scriptID				= rand(100, 1000);
 $database 				= Factory::getDBO();
 $document 				= Factory::getDocument();
+$wa 					= Factory::getApplication()->getDocument()->getWebAssetManager();
 
 $modSFX 				= htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
 $modClass 				= $modSFX ? ' ' . $modSFX : '';
