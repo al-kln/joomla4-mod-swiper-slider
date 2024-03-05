@@ -1,5 +1,9 @@
 # Changelog
 
+## SwiperSlider 3.11.5
+- fix | language files
+- fix | php files
+
 ## SwiperSlider 3.11.4
 - fix | language files
 - fix | media hero
