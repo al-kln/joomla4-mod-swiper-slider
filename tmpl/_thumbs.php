@@ -25,17 +25,17 @@ $swiper__wrapper__class .= ' swiperWrapperThumbs swiper__wrapper__thumbs';
                     
                 ?>
                     <div class="swiper-slide thumbs-swiper-slide">	
-                        <?php echo $params['wrap'] === 1 ? '<figure class="swiperMediaWrapper" style="margin-bottom:0">' : ''; ?>
+                        <?php echo (int) $params['wrap'] === 1 ? '<figure class="swiperMediaWrapper" style="margin-bottom:0">' : ''; ?>
                         <img class="d-block w-100" src="<?php echo Uri::root() . $image; ?>" alt="<?php echo $image__alt; ?>">
-                        <?php echo $params['wrap'] === 1 ? '</figure>' : ''; ?>
+                        <?php echo (int) $params['wrap'] === 1 ? '</figure>' : ''; ?>
                     </div>
                 <?php endforeach; ?>
             <?php elseif ($slider__layout == '_folder' ) : ?>
                 <?php foreach ($images_folder as $image_single) : ?>
                     <div class="swiper-slide thumbs-swiper-slide">
-                        <?php echo $params['wrap'] === 1 ? '<figure class="swiperMediaWrapper" style="margin-bottom:0">' : ''; ?>
+                        <?php echo (int) $params['wrap'] === 1 ? '<figure class="swiperMediaWrapper" style="margin-bottom:0">' : ''; ?>
                         <img class="w-100" src="<?php echo $folderpath . $image_single; ?>">
-                        <?php echo $params['wrap'] === 1 ? '</figure>' : ''; ?>
+                        <?php echo (int) $params['wrap'] === 1 ? '</figure>' : ''; ?>
                     </div>
                 <?php endforeach; ?>	
             <?php endif; ?>

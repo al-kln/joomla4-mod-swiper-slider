@@ -100,9 +100,9 @@ $swiper__wrapper__class .= ' swiperTypeImages swiper__type__images';
             <div class="<?php echo $swiper__slide__class; ?>"<?php echo $swiper__slide__data; ?>>	
                 
                 <?php if ($slider__type == 'normal') : ?>
-                    <?php echo $params['wrap'] === 1 ? '<figure class="swiperMediaWrapper" style="margin-bottom:0">' : ''; ?>
+                    <?php echo (int) $params['wrap'] === 1 ? '<figure class="swiperMediaWrapper" style="margin-bottom:0">' : ''; ?>
                     <?php echo $image__output; ?>
-                    <?php echo $params['wrap'] === 1 ? '</figure>' : ''; ?>
+                    <?php echo (int) $params['wrap'] === 1 ? '</figure>' : ''; ?>
                     <?php echo $lazyLoadIcon; ?>
                 <?php elseif ($slider__type == 'fullscreen') : ?>
                     <?php echo $background__output; ?>                

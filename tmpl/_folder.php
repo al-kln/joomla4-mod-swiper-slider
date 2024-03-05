@@ -77,9 +77,9 @@ $swiper__wrapper__class .= ' swiperTypeFolder swiper__type__folder';
 
         ?>
             <div class="<?php echo $swiper__slide__class; ?>">
-                <?php echo $params['wrap'] === 1 ? '<figure class="swiperMediaWrapper" style="margin-bottom:0">' : ''; ?>
+                <?php echo (int) $params['wrap'] === 1 ? '<figure class="swiperMediaWrapper" style="margin-bottom:0">' : ''; ?>
                 <?php echo $image__output; ?>
-                <?php echo $params['wrap'] === 1 ? '</figure>' : ''; ?>
+                <?php echo (int) $params['wrap'] === 1 ? '</figure>' : ''; ?>
             </div>
 
         <?php
