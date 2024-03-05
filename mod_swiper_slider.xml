@@ -6,7 +6,7 @@
 	<copyright>Copyright (C) 2024 Alexander Klein</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>alexander.klein@fact-werbeagentur.de</authorEmail>
-	<version>3.11.2</version>
+	<version>3.11.3</version>
 	<description>MOD_SWIPER_SLIDER_DESC</description>
 	<namespace path="src">Joomla\Module\Swiper</namespace>
 	<files>
@@ -159,6 +159,18 @@
 					label="MOD_SWIPER_SLIDER_GENERAL_HEADER"
 				/>
 
+
+				<field
+					name="wrap"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					default="1"
+					label="MOD_SWIPER_SLIDER_WRAP"
+					description="MOD_SWIPER_SLIDER_WRAP_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+				</field>
+				
 
 				<field
 					name="themeColor"

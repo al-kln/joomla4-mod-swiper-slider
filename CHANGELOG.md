@@ -1,5 +1,8 @@
 # Changelog
 
+## SwiperSlider 3.11.3
+- add | Wrap-Option
+
 ## SwiperSlider 3.11.2
 - fix | customLink in caption
 - update | load files per WebApplicationManager
