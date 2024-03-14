@@ -1,5 +1,8 @@
 # Changelog
 
+## SwiperSlider 3.11.6
+- fix | folder and thumbs
+
 ## SwiperSlider 3.11.5
 - fix | language files
 - fix | php files

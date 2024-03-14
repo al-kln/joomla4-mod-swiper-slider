@@ -8,7 +8,7 @@
  */
 defined('_JEXEC') or die;
 
-$files__array = array();
+$files__array = [];
 $swiper__wrapper__class .= ' swiperTypeFolder swiper__type__folder';
 ?>
 
