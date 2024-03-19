@@ -134,9 +134,9 @@ $fullscreen 			= $params['fullscreen'] ? ' swiperFullscreen swiper-fullscreen' :
 if ($params['loadFiles'] != 'hide') :
 	$wa->registerAndUseScript('swiper-bundle.min.js', 'media/mod_swiper_slider/js/swiper-bundle.min.js');
 	if ($params['loadFiles'] == 'auto') :
-		$wa->registerAndUseStyle('swiper-bundle.min.css', '/media/mod_swiper_slider/css/swiper-bundle.min.css');
+		$wa->registerAndUseStyle('swiper-bundle.min.css', 'media/mod_swiper_slider/css/swiper-bundle.min.css');
 	elseif ($params['loadFiles'] == 'vendor') :
-		$wa->registerAndUseStyle('swiper-vendor-bundle.min.css', '/media/mod_swiper_slider/css/swiper-vendor-bundle.min.css');
+		$wa->registerAndUseStyle('swiper-vendor-bundle.min.css', 'media/mod_swiper_slider/css/swiper-vendor-bundle.min.css');
 	endif;
 	if (
 		$params['ratio'] != 'ratio__auto' ||
@@ -150,7 +150,7 @@ if ($params['loadFiles'] != 'hide') :
 		$params['lazyload'] ||
 		$params['type__select'] == '3'
 	) :
-	$wa->registerAndUseStyle('swiper.custom.css', '/media/mod_swiper_slider/css/swiper.custom.css');
+	$wa->registerAndUseStyle('swiper.custom.css', 'media/mod_swiper_slider/css/swiper.custom.css');
 	endif;
 endif;
 

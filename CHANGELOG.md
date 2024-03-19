@@ -1,5 +1,8 @@
 # Changelog
 
+## SwiperSlider 3.11.7
+- fix | wa assets
+
 ## SwiperSlider 3.11.6
 - fix | folder and thumbs
 
