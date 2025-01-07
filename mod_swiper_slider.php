@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  mod_swiper_slider
  *
- * @copyright   Copyright (C) 2005 - 2024 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2025 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -523,12 +523,13 @@ require ModuleHelper::getLayoutPath('mod_swiper_slider', $params->get('layout', 
 				<?php endif; ?>
 			},
 		<?php endif; ?>
+		<?php if ($params['thumbs']) : ?>
+			thumbs: {
+				swiper: thumbsSwiper<?php echo $scriptID; ?>,
+			},
+		<?php endif; ?>
 	})
 
-	<?php if ($params['thumbs']) : ?>
-		Swiper<?php echo $scriptID; ?>.controller.control = thumbsSwiper<?php echo $scriptID; ?>;
-		thumbsSwiper<?php echo $scriptID; ?>.controller.control = Swiper<?php echo $scriptID; ?>;
-	<?php endif; ?>
 
 	<?php if ($slider__layout == '_nested') :
 		$nested__init = 1;

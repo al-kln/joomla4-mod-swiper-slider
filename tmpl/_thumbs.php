@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  mod_swiper_slider
  *
- * @copyright   Copyright (C) 2005 - 2024 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2025 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 defined('_JEXEC') or die;
@@ -101,7 +101,7 @@ $swiper__wrapper__class .= ' swiperWrapperThumbs swiper__wrapper__thumbs';
 
                     <?php
                     $swiper__count++;
-                endforeach; ?> ?>	
+                endforeach; ?>
             <?php endif; ?>
         </div>
     </div>
@@ -134,11 +134,10 @@ $swiper__wrapper__class .= ' swiperWrapperThumbs swiper__wrapper__thumbs';
         <?php if ($params['thumbs_centeredSlides']) : ?>
             centeredSlides: true,
         <?php endif; ?>
-        <?php if ($params['thumbs_slideToClickedSlide']) : ?>
-            slideToClickedSlide: true,
-        <?php endif; ?>
-        watchOverflow: true,
+        watchSlidesProgress: true,
+        // autoScrollOffset -> v3.13.0
+        // multipleActiveThumbs
+        // swiper
     })
-
 </script>
 
