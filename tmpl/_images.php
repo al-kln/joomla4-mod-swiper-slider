@@ -144,7 +144,7 @@ $swiper__wrapper__class .= ' swiperTypeImages swiper__type__images';
                 <?php endif; ?>
                 <?php // copyright ?>   
                 <?php if ($image__copyright) : ?>
-                    <figcaption class="<?php echo $image__copyright__class; ?>">&copy;<?php echo $image__copyright; ?></figcaption>
+                    <figcaption class="<?php echo $image__copyright__class; ?>"><?php echo $mediacaption . $image__copyright; ?></figcaption>
                 <?php endif; ?>
             </div>
 

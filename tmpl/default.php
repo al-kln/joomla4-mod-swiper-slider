@@ -21,6 +21,7 @@ $caption__custom__class	= $params['captionclass'];
 $heading__tag			= $params['heading_tag'];
 $image__link__caption	= $params['linkbtntxt'];
 $image__link__class		= $params['linkbtnclass'];
+$mediacaption			= $params['mediacaption'] === 'copyright' ? '&copy;' : '';
 
 
 // caption class
